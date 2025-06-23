@@ -10,7 +10,7 @@ export default function Experience() {
       period: "Sept 2025 – Present",
       description:
         "Specializing in spatial audio, environmental noise control, and psychoacoustics.",
-      achievements: ["Admitted with scholarship", "Research in SELD & spatial audio"]
+      achievements: ["Awarded with the Aalto Excellency scholarship"]
     },
     {
       type: "work",
@@ -20,9 +20,8 @@ export default function Experience() {
       description:
         "Designed and maintained Kotlin/Ktor microservices, built Rust DLQ processors for webhook reliability, and led CI/CD pipelines on Kubernetes.",
       achievements: [
-        "Reduced webhook failures by 45% with Rust retry logic",
+        "Reduced webhook failures by 36% with Rust retry logic",
         "Automated 10+ deployment pipelines (Docker, Helm)",
-        "Scaled services to 1M+ requests/day"
       ]
     },
     {
@@ -32,7 +31,16 @@ export default function Experience() {
       period: "Jul 2024 – Sep 2024",
       description:
         "Conducted beamforming and TDOA experiments for source localization. Drafted ICASSP publication on adversarial masking.",
-      achievements: ["Led data collection campaigns", "Co-authored ICASSP paper draft"]
+      achievements: ["Did the ", "Part of the research team for the ICASSP paper draft"]
+    },
+    {
+      type: "education",
+      title: "B.E. Electronics & Communication",
+      organization: "Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus",
+      period: "2019 – 2023",
+      description:
+        "Specializing in Signal Processing, Programming, Applied Mathematics and Algorithms.",
+      achievements: ["Graduated with Distinction", "Research in Speech Signal Processing"]
     },
   ];
 

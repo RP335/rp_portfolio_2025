@@ -19,8 +19,8 @@ export default function Hero() {
           <Image
             src="/bouncing-logo.png" // 3. Point to the file in your `public` folder
             alt="Rahul Peter Logo"
-            width={64}  // Corresponds to h-16
-            height={64} // Corresponds to w-16
+            width={128}  // Corresponds to h-16
+            height={128} // Corresponds to w-16
             className="animate-bounce"
             priority // Add this to preload the main hero image
           />
