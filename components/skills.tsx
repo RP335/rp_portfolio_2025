@@ -1,4 +1,4 @@
-import { BarChart3, Headphones, Building, Mic, Settings, Zap } from "lucide-react"
+import { BarChart3, Headphones, Zap, Mic, Settings, Code } from "lucide-react"
 
 export default function Skills() {
   const skillCategories = [
@@ -7,36 +7,56 @@ export default function Skills() {
       title: "Acoustic Measurement",
       skills: [
         "Sound Level Meters",
-        "FFT Analysis",
-        "Reverberation Time",
+        "FFT & STFT Analysis",
         "Impulse Response",
-        "MATLAB/Python Analysis",
+        "Reverberation Time",
+        "MATLAB/Python",
       ],
     },
     {
       icon: Headphones,
       title: "Audio Engineering",
-      skills: ["Digital Signal Processing", "Pro Tools", "Ableton Live", "Audio System Design", "Loudspeaker Design"],
-    },
-    {
-      icon: Building,
-      title: "Architectural Acoustics",
-      skills: ["Room Acoustics", "Sound Insulation", "HVAC Noise Control", "Building Codes", "Acoustic Modeling"],
-    },
-    {
-      icon: Mic,
-      title: "Environmental Acoustics",
-      skills: ["Noise Impact Assessment", "Traffic Noise", "Industrial Noise", "Community Noise", "Noise Mapping"],
-    },
-    {
-      icon: Settings,
-      title: "Software & Tools",
-      skills: ["EASE", "SoundPLAN", "COMSOL", "REW", "Audacity", "SketchUp"],
+      skills: [
+        "DSP Algorithm Design",
+        "Pro Tools",
+        "Ableton Live",
+        "Loudspeaker Tuning",
+        "Real-time Audio Plugins",
+      ],
     },
     {
       icon: Zap,
-      title: "Emerging Technologies",
-      skills: ["Active Noise Control", "Spatial Audio", "Machine Learning", "IoT Sensors", "Virtual Acoustics"],
+      title: "Signal Processing",
+      skills: [
+        "TDOA & Beamforming",
+        "Variational Mode Decomposition",
+        "Log-Mel & FOA Feature Extraction",
+      ],
+    },
+    {
+      icon: Mic,
+      title: "Machine Learning",
+      skills: [
+        "PyTorch/TensorFlow",
+        "Conformer Architectures",
+        "Data Augmentation (SpatialScaper, RIRs)",
+        "SELD",
+      ],
+    },
+    {
+      icon: Settings,
+      title: "Microservices & DevOps",
+      skills: ["Kotlin/Ktor", "Rust", "Docker & Kubernetes", "CI/CD", "AWS/GCP"],
+    },
+    {
+      icon: Code,
+      title: "Creative Coding",
+      skills: [
+        "React/Next.js",
+        "Three.js Waveform Visuals",
+        "Max4Live (Gen~)",
+        "MIDI Scripting",
+      ],
     },
   ]
 

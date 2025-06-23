@@ -4,46 +4,36 @@ import Link from "next/link"
 export default function Projects() {
   const projects = [
     {
-      title: "Concert Hall Acoustic Analysis",
+      title: "DCASE 2025 SELD Challenge",
       description:
-        "Comprehensive acoustic measurement and analysis of a 1,200-seat concert hall, including reverberation time optimization and sound distribution mapping.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["Architectural Acoustics", "EASE", "Measurement"],
-      demoLink: "#",
-      codeLink: "#",
-      featured: true,
+        "Built a Conformer-based ensemble for stereo sound event localization. Generated synthetic spatial data with SpatialScaper, implemented log-Mel & FOA feature pipelines in Rust with Rayon parallelism. Achieved macro F-score improvement on underrepresented classes.",
+      image: "/screenshots/dcase-seld.gif",
+      tags: ["SpatialScaper", "Conformer", "Rust", "PyTorch", "SELD"],
+      demoLink: "https://github.com/rahulpeter/dcase-seld",
+      codeLink: "https://github.com/rahulpeter/dcase-seld",
+      detailsLink: "/projects/dcase-2025"
     },
     {
-      title: "Urban Noise Mapping Project",
+      title: "QVIM AES 2025 Challenge",
       description:
-        "Created detailed noise maps for a metropolitan area using IoT sensors and machine learning algorithms to predict noise pollution patterns.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["Environmental Acoustics", "IoT", "Machine Learning"],
-      demoLink: "#",
-      codeLink: "#",
-      featured: true,
+        "Developed an ensemble of PaSST, PANNs, BEATs and MobileNetV3 for query-by-vocal-imitation. Combined DSP-based data augmentation and fine-tuning of pretrained audio transformers to boost MRR score.",
+      image: "/screenshots/qvim-demo.gif",
+      tags: ["PaSST", "PANNs", "Data Augmentation", "DSP", "Fine-tuning"],
+      demoLink: "https://github.com/rahulpeter/qvim-ensemble",
+      codeLink: "https://github.com/rahulpeter/qvim-ensemble",
+      detailsLink: "/projects/qvim-aes2025"
     },
     {
-      title: "Active Noise Control System",
+      title: "IIT Kanpur ICASSP Research (Jul–Sep 2024)",
       description:
-        "Developed an adaptive ANC system for industrial applications using real-time signal processing and custom hardware implementation.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["Signal Processing", "Hardware", "Control Systems"],
-      demoLink: "#",
-      codeLink: "#",
-      featured: false,
+        "Collaborated on adversarial masking techniques for robust sound source localization. Derived TDOA equations, conducted beamforming experiments and drafted an ICASSP paper under Dr. Priya D.",
+      image: "/screenshots/icassp-paper.png",
+      tags: ["TDOA", "Beamforming", "Adversarial Masking", "ICASSP 2025"],
+      demoLink: "mailto:professor@iitk.ac.in?subject=Request%20ICASSP%20Draft",
+      codeLink: "https://github.com/rahulpeter/icassp-seld",
+      detailsLink: "/projects/iitk-icaspp"
     },
-    {
-      title: "Psychoacoustic Audio Processor",
-      description:
-        "Built a real-time audio processor that applies psychoacoustic principles to enhance perceived audio quality in low-bandwidth scenarios.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["Psychoacoustics", "DSP", "Audio Engineering"],
-      demoLink: "#",
-      codeLink: "#",
-      featured: false,
-    },
-  ]
+  ];
 
   return (
     <section id="projects" className="py-20 bg-white">
@@ -55,13 +45,11 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 ${
-                project.featured ? "md:col-span-2 lg:col-span-1" : ""
-              }`}
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               <img src={project.image || "/placeholder.svg"} alt={project.title} className="w-full h-48 object-cover" />
               <div className="p-6">
@@ -92,7 +80,7 @@ export default function Projects() {
                     Code
                   </Link>
                   <Link
-                    href="#"
+                    href={project.detailsLink}
                     className="flex items-center text-gray-600 hover:text-gray-800 transition-colors duration-200"
                   >
                     <ExternalLink className="h-4 w-4 mr-1" />

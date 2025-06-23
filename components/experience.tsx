@@ -3,32 +3,46 @@ import { GraduationCap, Briefcase, Award } from "lucide-react"
 export default function Experience() {
   const experiences = [
     {
-      type: "education",
-      title: "Master of Science in Acoustics",
-      organization: "University Name",
-      period: "2023 - Present",
+      type: "work",
+      title: "Backend Developer – PineLabs (Fintech)",
+      organization: "PineLabs, Bengaluru",
+      period: "2023 – 2025",
       description:
-        "Specializing in architectural acoustics and environmental noise control. Thesis on adaptive acoustic systems.",
-      achievements: ["GPA: 3.8/4.0", "Research Assistant", "Acoustical Society Member"],
+        "Designed and maintained Kotlin/Ktor microservices, built Rust DLQ processors for webhook reliability, and led CI/CD pipelines on Kubernetes.",
+      achievements: [
+        "Reduced webhook failures by 45% with Rust retry logic",
+        "Automated 10+ deployment pipelines (Docker, Helm)",
+        "Scaled services to 1M+ requests/day"
+      ]
+    },
+    {
+      type: "education",
+      title: "M.Sc. Acoustics & Audio Technology (incoming)",
+      organization: "Aalto University",
+      period: "Sept 2025 – Present",
+      description:
+        "Specializing in spatial audio, environmental noise control, and psychoacoustics.",
+      achievements: ["Admitted with scholarship", "Research in SELD & spatial audio"]
     },
     {
       type: "work",
-      title: "Acoustic Consultant Intern",
-      organization: "Acoustic Engineering Firm",
-      period: "2023 - Present",
+      title: "Research Intern – Audio Lab",
+      organization: "IIT Kanpur",
+      period: "Jul 2024 – Sep 2024",
       description:
-        "Supporting senior consultants on commercial and residential acoustic projects, conducting field measurements.",
-      achievements: ["Led 5+ measurement campaigns", "Proficient in EASE software", "Client presentation experience"],
+        "Conducted beamforming and TDOA experiments for source localization. Drafted ICASSP publication on adversarial masking.",
+      achievements: ["Led data collection campaigns", "Co-authored ICASSP paper draft"]
     },
     {
       type: "certification",
       title: "Certified Audio Engineer",
       organization: "Audio Engineering Society",
       period: "2023",
-      description: "Professional certification in audio system design and implementation.",
-      achievements: ["Digital Signal Processing", "Loudspeaker Design", "Room Acoustics"],
+      description:
+        "Professional certification covering DSP, loudspeaker design, and room acoustics.",
+      achievements: ["Completed AES curriculum", "Hands-on loudspeaker tuning"]
     },
-  ]
+  ];
 
   const getIcon = (type: string) => {
     switch (type) {
