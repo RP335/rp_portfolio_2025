@@ -17,11 +17,11 @@ export default function Contact() {
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <Mail className="h-6 w-6 text-blue-600" />
-                <a href="mailto:rahul.peter@example.com" className="text-gray-700 hover:text-blue-600">rahul.peter@example.com</a>
+                <a href="mailto:rahul.peter@gmail.com" className="text-gray-700 hover:text-blue-600">rahul.peter@gmail.com</a>
               </div>
               <div className="flex items-center space-x-4">
                 <Phone className="h-6 w-6 text-blue-600" />
-                <span className="text-gray-700">+91 98765 43210</span>
+                <span className="text-gray-700">+91 8431940842</span>
               </div>
               <div className="flex items-center space-x-4">
                 <MapPin className="h-6 w-6 text-blue-600" />
@@ -32,10 +32,10 @@ export default function Contact() {
             <div className="mt-8">
               <h4 className="text-lg font-semibold text-gray-900 mb-4">Follow Me</h4>
               <div className="flex space-x-4">
-                <a href="https://linkedin.com/in/rahulpeter" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                <a href="https://www.linkedin.com/in/rahul-peter-172293194/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
                   <Linkedin className="h-6 w-6" />
                 </a>
-                <a href="https://github.com/rahulpeter" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                <a href="https://github.com/RP335" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
                   <Github className="h-6 w-6" />
                 </a>
               </div>
