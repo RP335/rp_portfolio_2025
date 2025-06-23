@@ -1,6 +1,8 @@
 import { ArrowDown } from "lucide-react"; // Remove Waves from here
 import Link from "next/link";
 
+import Image from "next/image"; // 1. Import the Image component
+
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
