@@ -12,7 +12,7 @@ export default function Footer() {
 
           <div className="text-center md:text-right">
             <p className="text-gray-400">© {new Date().getFullYear()} Rahul Peter. All rights reserved.</p>
-            <p className="text-gray-400 text-sm mt-1">Built with Next.js & Tailwind CSS</p>
+            {/* <p className="text-gray-400 text-sm mt-1">Built with Next.js & Tailwind CSS</p> */}
           </div>
         </div>
       </div>

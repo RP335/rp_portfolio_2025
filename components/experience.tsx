@@ -26,12 +26,12 @@ export default function Experience() {
     },
     {
       type: "work",
-      title: "Research Intern – Multimodal Information Processing Lab",
+      title: "Researcher (part time) – Multimodal Information Processing Lab",
       organization: "IIT Kanpur",
       period: "Jul 2024 – Sep 2024",
       description:
-        "Conducted beamforming and TDOA experiments for source localization. Drafted ICASSP publication on adversarial masking.",
-      achievements: ["Did the ", "Part of the research team for the ICASSP paper draft"]
+        "Conducted beamforming and TDOA experiments for source localization. Drafted an ICASSP and ASILOMAR paper on adversarial masking.",
+      achievements: ["Part of the research team for the publications"]
     },
     {
       type: "education",
@@ -40,7 +40,7 @@ export default function Experience() {
       period: "2019 – 2023",
       description:
         "Specializing in Signal Processing, Programming, Applied Mathematics and Algorithms.",
-      achievements: ["Graduated with Distinction", "Research in Speech Signal Processing"]
+      achievements: ["CGPA: 8.14/10.00", "Research in Speech Signal Processing"]
     },
   ];
 
