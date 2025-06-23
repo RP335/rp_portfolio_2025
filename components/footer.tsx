@@ -7,11 +7,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
             <Volume2 className="h-8 w-8 text-blue-400" />
-            <span className="text-xl font-bold">Your Name</span>
+            <span className="text-xl font-bold">Rahul Peter</span>
           </div>
 
           <div className="text-center md:text-right">
-            <p className="text-gray-400">© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+            <p className="text-gray-400">© {new Date().getFullYear()} Rahul Peter. All rights reserved.</p>
             <p className="text-gray-400 text-sm mt-1">Built with Next.js & Tailwind CSS</p>
           </div>
         </div>

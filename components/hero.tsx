@@ -17,12 +17,12 @@ export default function Hero() {
         </div>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-          Transitioning into
-          <span className="block text-blue-600">Acoustics</span>
+          Acoustics and
+          <span className="block text-blue-600">Audio Tech</span>
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          Passionate about sound engineering, architectural acoustics, and audio technology. Combining technical
+          Passionate about sound engineering, acoustics, and audio technology. Combining technical
           expertise with creative problem-solving.
         </p>
 

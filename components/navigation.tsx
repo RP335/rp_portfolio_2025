@@ -34,7 +34,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center space-x-2">
             <Volume2 className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">Your Name</span>
+            <span className="text-xl font-bold text-gray-900">Rahul Peter</span>
           </Link>
 
           {/* Desktop Navigation */}

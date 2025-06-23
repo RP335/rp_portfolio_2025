@@ -7,7 +7,7 @@ export default function Projects() {
       title: "DCASE 2025 SELD Challenge",
       description:
         "Built a Conformer-based ensemble for stereo sound event localization. Generated synthetic spatial data with SpatialScaper, implemented log-Mel & FOA feature pipelines in Rust with Rayon parallelism. Achieved macro F-score improvement on underrepresented classes.",
-      image: "/public/dcase-seld-overview.png",
+      image: "/project-images/dcase-seld-overview.png",
       tags: ["SpatialScaper", "Conformer", "Rust", "PyTorch", "SELD"],
       demoLink: "https://github.com/RP335/dcase_2025_seld_exps.git",
       codeLink: "https://github.com/RP335/dcase_2025_seld_exps.git",
@@ -17,7 +17,7 @@ export default function Projects() {
       title: "QVIM AES 2025 Challenge",
       description:
         "Developed an ensemble of PaSST, PANNs, BEATs and MobileNetV3 for query-by-vocal-imitation. Combined DSP-based data augmentation and fine-tuning of pretrained audio transformers to boost MRR score.",
-      image: "/public/qvim-challenge-overview.png",
+      image: "/project-images/qvim-challenge-overview.png",
       tags: ["PaSST", "PANNs", "Data Augmentation", "DSP", "Fine-tuning"],
       demoLink: "https://drive.google.com/drive/folders/1PBCdzSWXXxHemhHLLGjw-Ii9J7pjQ5nb?usp=sharing",
       codeLink: "https://github.com/RP335/qvim-baseline",
@@ -27,7 +27,7 @@ export default function Projects() {
       title: "Sound Source localization in the Spherical Harmonic Domain",
       description:
         "Collaborated on adversarial masking techniques for robust sound source localization in the SH domain. Derived TDOA equations, conducted beamforming experiments and drafted an ICASSP paper under Dr. Priya D.",
-      image: "/public/ssl-iit-k.png",
+      image: "/project-images/ssl-iit-k.png",
       tags: ["TDOA", "Beamforming", "Adversarial Masking", "ICASSP 2025"],
       demoLink: "mailto:priyadw@iitk.ac.in?subject=Request%20ICASSP%20Draft",
       codeLink: "https://github.com/RP335/msdm_custom",
