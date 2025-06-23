@@ -1,5 +1,6 @@
-import { ArrowDown, Waves } from "lucide-react"
-import Link from "next/link"
+import { ArrowDown } from "lucide-react"; // Remove Waves from here
+import Link from "next/link";
+import CustomWaveIcon from "./CustomWaveIcon"; // <-- Import your new icon
 
 export default function Hero() {
   return (
@@ -13,12 +14,19 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="flex justify-center mb-8">
-          <Waves className="h-16 w-16 text-blue-600 animate-bounce" />
+          {/* 2. Use the Image component instead of the icon */}
+          <Image
+            src="/bouncing-logo.png" // 3. Point to the file in your `public` folder
+            alt="Rahul Peter Logo"
+            width={64}  // Corresponds to h-16
+            height={64} // Corresponds to w-16
+            className="animate-bounce"
+            priority // Add this to preload the main hero image
+          />
         </div>
-
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-          Acoustics and
-          <span className="block text-blue-600">Audio Tech</span>
+          Audio
+          <span className="block text-blue-600">Researcher</span>
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
