@@ -6,12 +6,12 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Your Name - Acoustics Professional",
+  title: "Rahul Peter - Acoustics and Audio Engineering Researcher",
   description: "Portfolio showcasing my transition into acoustics engineering and sound design",
   keywords: ["acoustics", "sound engineering", "audio", "portfolio", "engineering"],
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: "Rahul Peter" }],
   openGraph: {
-    title: "Your Name - Acoustics Professional",
+    title: "Rahul Peter - Acoustics and Audio Engineering Researcher",
     description: "Portfolio showcasing my transition into acoustics engineering and sound design",
     type: "website",
   },

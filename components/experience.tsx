@@ -2,6 +2,16 @@ import { GraduationCap, Briefcase, Award } from "lucide-react"
 
 export default function Experience() {
   const experiences = [
+
+    {
+      type: "education",
+      title: "M.Sc. Acoustics & Audio Technology (incoming)",
+      organization: "Aalto University",
+      period: "Sept 2025 – Present",
+      description:
+        "Specializing in spatial audio, environmental noise control, and psychoacoustics.",
+      achievements: ["Admitted with scholarship", "Research in SELD & spatial audio"]
+    },
     {
       type: "work",
       title: "Backend Developer – PineLabs (Fintech)",
@@ -16,31 +26,13 @@ export default function Experience() {
       ]
     },
     {
-      type: "education",
-      title: "M.Sc. Acoustics & Audio Technology (incoming)",
-      organization: "Aalto University",
-      period: "Sept 2025 – Present",
-      description:
-        "Specializing in spatial audio, environmental noise control, and psychoacoustics.",
-      achievements: ["Admitted with scholarship", "Research in SELD & spatial audio"]
-    },
-    {
       type: "work",
-      title: "Research Intern – Audio Lab",
+      title: "Research Intern – Multimodal Information Processing Lab",
       organization: "IIT Kanpur",
       period: "Jul 2024 – Sep 2024",
       description:
         "Conducted beamforming and TDOA experiments for source localization. Drafted ICASSP publication on adversarial masking.",
       achievements: ["Led data collection campaigns", "Co-authored ICASSP paper draft"]
-    },
-    {
-      type: "certification",
-      title: "Certified Audio Engineer",
-      organization: "Audio Engineering Society",
-      period: "2023",
-      description:
-        "Professional certification covering DSP, loudspeaker design, and room acoustics.",
-      achievements: ["Completed AES curriculum", "Hands-on loudspeaker tuning"]
     },
   ];
 

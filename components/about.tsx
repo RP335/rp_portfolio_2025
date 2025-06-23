@@ -14,7 +14,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src="/placeholder.svg?height=400&width=500"
+              src="/rp_profile_image_portfolio.jpg?height=400&width=500"
               alt="Professional headshot"
               className="rounded-lg shadow-lg w-full"
             />
