@@ -24,42 +24,41 @@ export default function Hero() {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image Container - Opacity is applied here */}
+      <div className="absolute inset-0 z-0 opacity-20">
         <Image
-          src="/cover-3.png"
+          src="/cover-2.png"
           alt="Background cover image"
           layout="fill"
           objectFit="cover"
           quality={90}
-          className="opacity-20"
+          // The opacity class has been removed from the image itself
         />
       </div>
 
       {/* The Magnifying Lens Effect */}
       <div
         className={`
-          absolute z-10 pointer-events-none rounded-full border-4 border-white/50 shadow-2xl backdrop-filter backdrop-brightness-110
+          absolute z-10 pointer-events-none rounded-full border-4 border-white/50 shadow-2xl
           transition-opacity duration-300
           ${isHovering ? "opacity-100" : "opacity-0"}
-          hidden md:block // <-- THE FIX FOR MOBILE: Hide on small screens, block on medium screens and up
+          hidden md:block 
         `}
         style={{
           left: position.x,
           top: position.y,
           width: `${lensSize}px`,
           height: `${lensSize}px`,
-          transform: 'translate(-50%, -50%)', // Center the lens on the cursor
+          transform: 'translate(-50%, -50%)',
           overflow: 'hidden',
         }}
       >
-        {/* The zoomed-in image inside the lens */}
+        {/* The zoomed-in image inside the lens - This image is now fully opaque */}
         <Image
           src="/cover-2.png"
           alt="Zoomed background"
           className="absolute object-cover"
           style={{
-            // THE FIX FOR THE DRIFT BUG: This new math keeps the image centered
             width: `calc(100vw * ${zoomLevel})`,
             height: `calc(100vh * ${zoomLevel})`,
             transform: `translate(${-position.x * zoomLevel + lensSize / 2}px, ${-position.y * zoomLevel + lensSize / 2}px)`,
@@ -68,8 +67,7 @@ export default function Hero() {
         />
       </div>
 
-
-      {/* Your original foreground content - now with z-index to stay on top */}
+      {/* Your original foreground content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
         <div className="flex justify-center mb-8">
           <Image
