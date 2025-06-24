@@ -1,4 +1,4 @@
-"use client"; // 1. Make this a Client Component
+"use client";
 
 import { useState, MouseEvent } from "react";
 import { ArrowDown } from "lucide-react";
@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
-  // 2. State to track mouse position and hover status
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
@@ -15,8 +14,8 @@ export default function Hero() {
     setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
-  const lensSize = 200; // The size of our magnifying circle
-  const zoomLevel = 2;   // How much to zoom in
+  const lensSize = 200;
+  const zoomLevel = 2;
 
   return (
     <section
@@ -25,29 +24,32 @@ export default function Hero() {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {/* 3. Add the background image */}
-      <div className="absolute inset-0 z-0 opacity-20">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
         <Image
-          src="/cover-2.png"
+          src="/cover-3.png"
           alt="Background cover image"
           layout="fill"
           objectFit="cover"
           quality={90}
+          className="opacity-20"
         />
       </div>
 
-      {/* 4. The Magnifying Lens Effect */}
+      {/* The Magnifying Lens Effect */}
       <div
         className={`
           absolute z-10 pointer-events-none rounded-full border-4 border-white/50 shadow-2xl backdrop-filter backdrop-brightness-110
           transition-opacity duration-300
           ${isHovering ? "opacity-100" : "opacity-0"}
+          hidden md:block // <-- THE FIX FOR MOBILE: Hide on small screens, block on medium screens and up
         `}
         style={{
-          left: position.x - lensSize / 2,
-          top: position.y - lensSize / 2,
+          left: position.x,
+          top: position.y,
           width: `${lensSize}px`,
           height: `${lensSize}px`,
+          transform: 'translate(-50%, -50%)', // Center the lens on the cursor
           overflow: 'hidden',
         }}
       >
@@ -55,13 +57,12 @@ export default function Hero() {
         <Image
           src="/cover-2.png"
           alt="Zoomed background"
-          className="absolute"
+          className="absolute object-cover"
           style={{
-            width: `calc(100% * ${zoomLevel})`,
-            height: `calc(100% * ${zoomLevel})`,
-            top: `-${position.y * (zoomLevel - 1)}px`,
-            left: `-${position.x * (zoomLevel - 1)}px`,
-            objectFit: "cover",
+            // THE FIX FOR THE DRIFT BUG: This new math keeps the image centered
+            width: `calc(100vw * ${zoomLevel})`,
+            height: `calc(100vh * ${zoomLevel})`,
+            transform: `translate(${-position.x * zoomLevel + lensSize / 2}px, ${-position.y * zoomLevel + lensSize / 2}px)`,
             maxWidth: 'none',
           }}
         />
