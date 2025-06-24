@@ -43,7 +43,12 @@ export default function Contact() {
           </div>
 
           <div>
-            <form className="space-y-6">
+            {/* --- FORM CHANGES START HERE --- */}
+            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
+              
+              {/* This hidden input is required */}
+              <input type="hidden" name="access_key" value="a5972d02-e563-4273-9e99-662aa57e1768" />
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Name
@@ -99,6 +104,7 @@ export default function Contact() {
                 Send Message
               </button>
             </form>
+
           </div>
         </div>
       </div>
