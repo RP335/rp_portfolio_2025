@@ -1,28 +1,83 @@
-import { ArrowDown } from "lucide-react"; // Remove Waves from here
-import Link from "next/link";
+"use client"; // 1. Make this a Client Component
 
-import Image from "next/image"; // 1. Import the Image component
+import { useState, MouseEvent } from "react";
+import { ArrowDown } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
+  // 2. State to track mouse position and hover status
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  const lensSize = 200; // The size of our magnifying circle
+  const zoomLevel = 2;   // How much to zoom in
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-2000"></div>
+    <section
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      {/* 3. Add the background image */}
+      <div className="absolute inset-0 z-0 opacity-20">
+        <Image
+          src="/cover-2.png"
+          alt="Background cover image"
+          layout="fill"
+          objectFit="cover"
+          quality={90}
+        />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-       <div className="flex justify-center mb-8">
-          {/* 2. Use the Image component instead of the icon */}
+      {/* 4. The Magnifying Lens Effect */}
+      <div
+        className={`
+          absolute z-10 pointer-events-none rounded-full border-4 border-white/50 shadow-2xl backdrop-filter backdrop-brightness-110
+          transition-opacity duration-300
+          ${isHovering ? "opacity-100" : "opacity-0"}
+        `}
+        style={{
+          left: position.x - lensSize / 2,
+          top: position.y - lensSize / 2,
+          width: `${lensSize}px`,
+          height: `${lensSize}px`,
+          overflow: 'hidden',
+        }}
+      >
+        {/* The zoomed-in image inside the lens */}
+        <Image
+          src="/cover-2.png"
+          alt="Zoomed background"
+          className="absolute"
+          style={{
+            width: `calc(100% * ${zoomLevel})`,
+            height: `calc(100% * ${zoomLevel})`,
+            top: `-${position.y * (zoomLevel - 1)}px`,
+            left: `-${position.x * (zoomLevel - 1)}px`,
+            objectFit: "cover",
+            maxWidth: 'none',
+          }}
+        />
+      </div>
+
+
+      {/* Your original foreground content - now with z-index to stay on top */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
+        <div className="flex justify-center mb-8">
           <Image
-            src="/bouncing-logo.png" // 3. Point to the file in your `public` folder
+            src="/bouncing-logo.png"
             alt="Rahul Peter Logo"
-            width={128}  // Corresponds to h-16
-            height={128} // Corresponds to w-16
+            width={128}
+            height={128}
             className="animate-bounce"
-            priority // Add this to preload the main hero image
+            priority
           />
         </div>
 
