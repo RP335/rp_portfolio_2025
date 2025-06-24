@@ -27,7 +27,7 @@ export default function Hero() {
       {/* Background Image Container - Opacity is applied here */}
       <div className="absolute inset-0 z-0 opacity-20">
         <Image
-          src="/cover-2.png"
+          src="/cover-3.png"
           alt="Background cover image"
           layout="fill"
           objectFit="cover"
