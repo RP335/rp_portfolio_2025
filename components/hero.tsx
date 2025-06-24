@@ -18,7 +18,12 @@ export default function Hero() {
   const zoomLevel = 2;
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
+    <section
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
       {/* Background Image Container - Opacity is applied here */}
       <div className="absolute inset-0 z-0 opacity-20">
         <Image
@@ -27,17 +32,9 @@ export default function Hero() {
           layout="fill"
           objectFit="cover"
           quality={90}
+          // The opacity class has been removed from the image itself
         />
       </div>
-
-      {/* Mouse tracking overlay - this ensures mouse events work everywhere */}
-      <div 
-        className="absolute inset-0 z-30"
-        onMouseMove={handleMouseMove}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-        style={{ pointerEvents: 'none' }}
-      />
 
       {/* The Magnifying Lens Effect */}
       <div
@@ -96,13 +93,13 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Link
             href="#projects"
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-200 relative z-10"
+            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
           >
             View My Work
           </Link>
           <Link
             href="#contact"
-            className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-200 relative z-10"
+            className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-200"
           >
             Get In Touch
           </Link>
@@ -110,7 +107,7 @@ export default function Hero() {
 
         <Link
           href="#about"
-          className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-200 relative z-10"
+          className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-200"
         >
           <ArrowDown className="h-6 w-6 animate-bounce" />
         </Link>
