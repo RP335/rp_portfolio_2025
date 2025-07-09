@@ -5,7 +5,7 @@ export const projectsData = [
     shortDescription: "Built a Conformer-based ensemble for stereo sound event localization. Generated synthetic spatial data with SpatialScaper, implemented log-Mel & FOA feature pipelines in Rust with Rayon parallelism.",
     image: "/project-images/dcase-seld-overview.png",
     tags: ["SpatialScaper", "Conformer", "Rust", "PyTorch", "SELD"],
-    demoLink: "https://github.com/RP335/dcase_2025_seld_exps.git",
+    demoLink: "https://dcase.community/challenge2025/task-stereo-sound-event-localization-and-detection-in-regular-video-content-results#Bahuguna_UPF_task3a_report",
     codeLink: "https://github.com/RP335/dcase_2025_seld_exps.git",
     challenge: "The DCASE 2025 Challenge (Task 3) focused on Sound Event Localization and Detection (SELD) in stereo audio. The primary difficulties were accurately performing joint detection, direction-of-arrival estimation, and distance estimation, especially with the significant class imbalance present in the STARSS23 dataset.",
     role: "I co-led this project, focusing on the core model architecture and performance. My main responsibilities included designing and implementing the Conformer-based ensemble, developing the feature extraction pipelines in Rust for performance, and training the models. I collaborated closely with my partner, Arjun Bahuguna, who was instrumental in the synthetic data generation using SpatialScaper and co-authoring the technical report.",
