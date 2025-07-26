@@ -12,6 +12,7 @@ export const projectsData = [
     collaborators: [
       { name: "Arjun Bahuguna", link: "https://www.linkedin.com/in/arjunbahuguna/" },
     ],
+    
     solution: "We proposed a 'winner-takes-all' ensemble of two specialized Conformer models: one for the full 3D SELD task (multi-ACCDOA) and another expert model for just SED and DOA. This allowed the system to dynamically select the most reliable prediction at each time frame based on pre-calculated, per-class performance metrics. To combat data scarcity for rare classes, we leveraged SpatialScaper for synthetic data generation and applied augmentations like channel-swapping.",
     keyTechniques: [
       "Conformer-based model architecture for sequence modeling.",
