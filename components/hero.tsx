@@ -81,13 +81,12 @@ export default function Hero() {
         </div>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-          Audio
-          <span className="block text-blue-600">Researcher</span>
+          Move this
+          <span className="block text-blue-600">Mouse Around</span>
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          Passionate about sound engineering, acoustics, and audio technology. Combining technical
-          expertise with creative problem-solving.
+          I quit my job as a software engineer to pursue my research in Audio/Acoustics. Currently at Aalto University majoring in Acoustics and Audio Tech.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

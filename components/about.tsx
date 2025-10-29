@@ -7,7 +7,7 @@ export default function About() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About My Journey</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            I’m Rahul Peter — an aspiring audio researcher with a deep fascination for acoustics, signal processing, and audio information retrieval. Over the past few years I’ve dabbled in hands-on research: developing beamforming and TDOA algorithms for sound source localization, experimenting with ambisonics, and fine-tuning audio transformers for query-by-vocal-imitation. Alongside my research, I've worked as a software engineer in Rust and Python to build data pipelines and deployment workflows, ensuring reproducible experiments and scalable processing. Next up: M.Sc. in Acoustics & Audio Technology at Aalto University (Sept ’25), where I’ll push these explorations even further.
+            I started out making music in my bedroom when I was 15, and I got deep into production during my later years. During my undergrad, coursework in DSP and math brought me closer to my interests. I couldn't go for my higher studies right after my bachelors's (to save up), during which I worked as a software engineer. During this time, I was able to beef up my coding skills and craft a path for me to pursue my research in acoustics and signal processing (which I'm now invested in at Aalto). I'm continuing to do this by participating in challenges with ML/Audio/Acoustics and even winning one this year. I'll continue to push these boundaries.
           </p>
         </div>
 
@@ -26,7 +26,7 @@ export default function About() {
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Background</h3>
                 <p className="text-gray-600">
-                  I spent 2 years at PineLabs building scalable fintech microservices (Kotlin + Rust + Docker/Kubernetes), automating deployments, and optimizing webhook failure pipelines. Under the hood I mastered CI/CD, cloud infra and high-throughput data processing. Besides these, I've been invested in spatial audio and 3D signal processing research (more particularly sound source localization). Other than that I engage in audio information reretrieval and deep learning for audio signal processing
+                  I spent 2 years at PineLabs building scalable fintech microservices (Kotlin + Rust + Docker/Kubernetes), automating deployments, and optimizing webhook failure pipelines. Under the hood I mastered CI/CD, cloud infra and high-throughput data processing. Just right after I left my job, I've been invested in spatial audio and 3D signal processing research (more particularly sound source localization). Other than that I engage in audio information retrieval and deep learning for audio signal processing.
                 </p>
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function About() {
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Approach</h3>
                 <p className="text-gray-600">
-                  I combine scientific rigor (TDOA equations, ambisonics, objective metrics) with creative coding (Max4Live devices, generative MIDI, interactive React demos). Every project blends measured data, ML models and UX-focused visuals to tell a sonic story.
+                  I try to deconstruct complex technical logic (which I used to abstract in my early days) and apply the same to real-world scenarios. Now I'm learning more at my uni!
                 </p>
               </div>
             </div>
