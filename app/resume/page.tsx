@@ -147,7 +147,7 @@ export default function ResumePage() {
                             <CardTitle className="text-lg">Personalized Hearing Protection for First Responders</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <p className="text-sm text-gray-600 mb-2">Smart audio module between radio and headset. Real-time DSP pipeline (WDRC, noise reduction) on Tympan Rev F < 10ms latency.</p>
+                            <p className="text-sm text-gray-600 mb-2">Smart audio module between radio and headset. Real-time DSP pipeline (WDRC, noise reduction) on Tympan Rev F &lt; 10ms latency.</p>
                         </CardContent>
                     </Card>
 
