@@ -8,6 +8,7 @@ export interface Project {
   demoLink?: string
   codeLink?: string
   detailsLink?: string // Keeping for backward compat if needed
+  leaderboardLink?: string
   slug: string
   challenge?: string
   role?: string
@@ -25,8 +26,9 @@ export const projectsData: Project[] = [
     shortDescription: "Ranked 2nd in the Cadenza Challenge. Hybrid attention network + tree-based regressors for predicting lyric intelligibility in music.",
     image: "/project-images/cadenza-image.png",
     tags: ["Hybrid Attention", "Ensemble Learning", "Audio Flamingo", "ICASSP 2026", "Python"],
-    demoLink: "https://cadenzachallenge.org/docs/clip1/results",
-    codeLink: "https://eval.ai/web/challenges/challenge-page/2634/leaderboard/6866",
+    demoLink: "https://github.com/vvk-mhn/cad_icassp_2026/tree/main",
+    codeLink: "https://github.com/vvk-mhn/cad_icassp_2026/tree/main",
+    leaderboardLink: "https://eval.ai/web/challenges/challenge-page/2634/leaderboard/6866",
     challenge: "The Cadenza ICASSP 2026 Challenge tasked systems to predict lyric intelligibility rates from perceptual experiments on accompanied singing, including simulated hearing loss. The main difficulty was building an intrusive model that accounts for acoustic quality, lexical alignment, and contextual cues in music mixtures.",
     role: "I was responsible for the key orchestration, planning, and delivering results for the entire project. Our team from Aalto University secured 2nd place in the final evaluation rankings.",
     collaborators: [
