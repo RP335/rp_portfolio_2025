@@ -63,15 +63,13 @@ export default function Projects() {
                       Code
                     </a>
                   )}
-                  {project.detailsLink && (
-                    <Link
-                      href={project.detailsLink}
-                      className="flex items-center text-gray-600 hover:text-gray-800 transition-colors duration-200"
-                    >
-                      <ExternalLink className="h-4 w-4 mr-1" />
-                      Details
-                    </Link>
-                  )}
+                  <Link
+                    href={project.detailsLink || `/projects/${project.slug}`}
+                    className="flex items-center text-gray-600 hover:text-gray-800 transition-colors duration-200"
+                  >
+                    <ExternalLink className="h-4 w-4 mr-1" />
+                    Details
+                  </Link>
                 </div>
               </div>
             </div>
