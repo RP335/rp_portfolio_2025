@@ -18,12 +18,16 @@ export default function Publications() {
       link: "https://cmsworkshops.com/Asilomar2025/view_paper.php?PaperNum=1523",
     },
     {
-      title:
-        "Real-Time Audio Monitoring Pipeline with Edge Inference and IoT Supervision via ThingsBoard",
+      title: "Class-Aware Hybrid Ensemble for Query-by-Vocal Imitation",
       authors: "Rahul Peter, Vivek Mohan",
-      venue:
-        "AES International Conference on Artificial Intelligence and Machine Learning for Audio 2025 — Late Breaking",
-      link: "https://drive.google.com/file/d/1DubDQQ2HyjpSqvUO861CuDj2aR3qZ7Ad/view",
+      venue: "AES International Conference on Artificial Intelligence and Machine Learning for Audio 2025",
+      link: "https://doi.org/10.5281/zenodo.18289124",
+    },
+    {
+      title: "INTRUSIVE LYRIC INTELLIGIBILITY VIA HYBRID ATTENTION OVER ASR EMBEDDINGS AND FEATURE BLOCKS",
+      authors: "Rahul Peter, Vivek Mohan, Seralathan Subramanian, Lauri Juvela",
+      venue: "ICASSP 2026 (Accepted, Paper #18944)",
+      link: "#",
     },
   ]
 
