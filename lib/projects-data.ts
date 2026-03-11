@@ -17,6 +17,7 @@ export interface Project {
   keyTechniques?: string[]
   results?: string
   architectureImg?: string
+  gallery?: string[]
 }
 
 export const projectsData: Project[] = [
@@ -52,24 +53,36 @@ export const projectsData: Project[] = [
     title: "Personalised Hearing for Savox-Otos",
     shortDescription: "Developing an inline audio module for professional hearing protection headsets to apply personalized hearing profiles.",
     image: "/project-images/savox-otos-image.png",
-    tags: ["Embedded Systems", "DSP", "NFC", "Product Development", "User Research"],
+    tags: ["Embedded Systems", "DSP", "NFC", "Product Development", "User Research", "C++", "Python"],
     demoLink: "",
-    codeLink: "",
-    challenge: "Professional hearing protection headsets are largely one-size-fits-all in terms of audio tuning. Workers with noise-induced hearing loss struggle to understand speech, reducing safety and increasing fatigue. The challenge was to apply worker-specific hearing profiles to the audio signal without modifying the certified headset hardware.",
-    role: "As Tech Lead, I worked on the audio programming and DSP for embedded systems. I collaborated with the electronics and research teams to integrate the solution.",
+    codeLink: "https://github.com/RP335/personalised_hearing_pdp",
+    challenge: "Professional hearing protection headsets are largely one-size-fits-all in terms of audio tuning. Workers with noise-induced hearing loss struggle to understand speech, reducing safety and increasing fatigue. The challenge was to apply worker-specific hearing profiles to the audio signal without modifying the certified headset hardware, while ensuring ultra-low latency (<3ms) and preserving high speech intelligibility avoiding low-frequency masking.",
+    role: "As Tech Lead (Acoustics and Audio Tech), I engineered the real-time audio pipeline and DSP for embedded hardware (Teensy 3.2/4.0). I implemented the NAL-R prescription algorithm with 8-band WDRC compression and managed the overall technical architecture.",
     collaborators: [
-      { name: "Hoang Tran (Electronics/NFC)", link: "#" },
-      { name: "Robert Örn (PM)", link: "#" }
+      { name: "Robert Örn (PM - Product Dev)", link: "https://www.linkedin.com/in/robert-orn/" },
+      { name: "Hoang Tran (Tech - Robotics/Control)", link: "https://www.linkedin.com/in/hoanggtrann/" },
+      { name: "Aws Alizzawi (Supply/Research - Product Dev)", link: "https://www.linkedin.com/in/aws-alizzawi-89210b226/" },
+      { name: "Yun Bai (Design/HCI)", link: "https://www.linkedin.com/in/yun-bai-3ab8b5380/" },
+      { name: "Hanna Rozmarynowska (Safety Officer - Industrial Design)", link: "https://www.linkedin.com/in/hanna-rozmarynowska/" },
+      { name: "Shotaro Tanigawa (Economy Officer - Economics)", link: "#" },
+      { name: "Petteri Hyvarinen (External Consultant - Acoustics)", link: "#" }
     ],
-    solution: "We designed an inline audio module that uses an NFC card to load the worker's hearing profile into a DSP unit. The module shapes the audio signal in real-time before it reaches the headset. The system works offline, integrates with existing Savox controllers, and requires no user interaction during missions.",
+    solution: "We engineered an inline NFC-enabled DSP module that reads individual audiometric data from NFC-encoded cards and applies frequency-specific amplification using the NAL-R prescription formula to maximize speech intelligibility. The hardware employs an 8-band parametric equalisation architecture, which is being migrated to a multiband WDRC compression pipeline with soft-knee per-band compression.",
     keyTechniques: [
-      "Embedded DSP (Tympan Rev F / Teensy 4.1)",
-      "NFC-based Profile Loading (PN7150)",
-      "Real-time Audio Processing",
-      "Hardware Integration"
+      "NAL-R Prescription Formula Implementation",
+      "8-Band Parametric EQ & WDRC Compression Pipeline",
+      "Embedded DSP (Teensy 3.2/4.0, ARM Cortex-M4/M7, PJRC Audio Shield)",
+      "NFC-based Audiogram Loading (NTAG213, HIMSA Noah format XMLs)",
+      "Real-time Audio Processing (under 3ms latency)",
+      "Psychoacoustic Testing with KEMAR mannequin"
     ],
-    results: "Designed a functional concept for an NFC-driven inline DSP module. Prototyped the hardware integration and selected algorithms for hearing personalization.",
-    architectureImg: "/project-images/savox-architecture.png" // Placeholder
+    results: "Validated a functional prototype that applies NAL-R correction in real-time. Conducted A/B comparisons with simulated hearing loss showing profound intelligibility improvements, shifting towards multi-band WDRC for optimal loudness growth.",
+    architectureImg: "/project-images/kemar_head_diagram.jpeg",
+    gallery: [
+      "/project-images/electronics_and_stuff_raw.jpg",
+      "/project-images/my_team_mates_and_me_working.jpeg",
+      "/project-images/user-flow.jpeg"
+    ]
   },
   {
     slug: "dcase-2025",

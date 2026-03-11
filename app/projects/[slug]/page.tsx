@@ -116,12 +116,28 @@ export default async function ProjectDetailsPage(props: { params: Promise<{ slug
         </div>
 
         {/* Architecture Diagram */}
-        <section className="mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">System Architecture</h2>
-          <div className="bg-white p-4 rounded-lg shadow-xl">
-            <Image src={project.architectureImg} alt={`${project.title} Architecture`} width={1200} height={800} className="rounded-md" />
-          </div>
-        </section>
+        {project.architectureImg && (
+          <section className="mt-16">
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">System Architecture</h2>
+            <div className="bg-white p-4 rounded-lg shadow-xl">
+              <Image src={project.architectureImg} alt={`${project.title} Architecture`} width={1200} height={800} className="rounded-md" />
+            </div>
+          </section>
+        )}
+
+        {/* Gallery */}
+        {project.gallery && project.gallery.length > 0 && (
+          <section className="mt-16">
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Project Gallery</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {project.gallery.map((img, idx) => (
+                <div key={idx} className="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                  <Image src={img} alt={`${project.title} Gallery Image ${idx + 1}`} width={800} height={600} className="rounded-md object-cover w-full h-auto" />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
       </div>
     </main>

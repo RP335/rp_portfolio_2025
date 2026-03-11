@@ -29,10 +29,9 @@ export default function Hero() {
         <Image
           src="/cover-3.png"
           alt="Background cover image"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           quality={90}
-          // The opacity class has been removed from the image itself
         />
       </div>
 
@@ -54,10 +53,10 @@ export default function Hero() {
         }}
       >
         {/* The zoomed-in image inside the lens - This image is now fully opaque */}
-        <Image
+        <img
           src="/cover-3.png"
           alt="Zoomed background"
-          className="absolute object-cover"
+          className="absolute object-cover pointer-events-none"
           style={{
             width: `calc(100vw * ${zoomLevel})`,
             height: `calc(100vh * ${zoomLevel})`,
