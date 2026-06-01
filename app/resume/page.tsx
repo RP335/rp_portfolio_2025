@@ -53,11 +53,11 @@ export default function ResumePage() {
 
                     <div className="space-y-2">
                         <div className="flex justify-between items-baseline flex-wrap">
-                            <h3 className="text-lg font-bold text-gray-900">RnD Intern, Trinnov Audio</h3>
+                            <h3 className="text-lg font-bold text-gray-900">RnD Intern, <a href="https://www.trinnov.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Trinnov Audio</a></h3>
                             <span className="text-sm text-gray-600 font-medium">Feb 2026 -- Present</span>
                         </div>
                         <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1 text-justify">
-                            <li>Working as a full-time intern at Trinnov Audio in Paris, supervised by Romain Couderc and Théophile Dupré, and co-supervised by Inria (Antoine Deleforge, Jean-Daniel Pascal, and Cedric Foy).</li>
+                            <li>Working as a full-time intern at Trinnov Audio in Paris, supervised by Romain Couderc and Théophile Dupré, and co-supervised by <a href="https://www.inria.fr/en" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Inria</a> (Antoine Deleforge, Jean-Daniel Pascal, and Cedric Foy).</li>
                             <li>Developing ML/DSP methods to extract loudspeaker (source) characteristics from room measurements, enabling improved calibration and equalisation.</li>
                             <li>Focus on simulation, model training, and validation on real-world data within the research team headed by Miguel Moleron and Axel Coulon.</li>
                         </ul>
@@ -171,6 +171,9 @@ export default function ResumePage() {
                 <section className="space-y-6">
                     <h2 className="text-xl font-bold text-gray-900 uppercase tracking-wide border-b pb-2 mb-4">Publications</h2>
                     <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2 text-justify">
+                        <li>
+                            <strong>Intrusive Lyric Intelligibility via Hybrid Attention over ASR Embeddings and Feature Blocks.</strong> Published at ICASSP 2026. <a href="https://ieeexplore.ieee.org/document/11464474" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">IEEE Xplore</a>
+                        </li>
                         <li>
                             <strong>Adversarial Masking Approach for Robust Source Localization in the SH Domain.</strong> Accepted to IEEE Asilomar Conference on Signals, Systems & Computers 2025. <a href="https://cmsworkshops.com/Asilomar2025/view_paper.php?PaperNum=1523" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Session page</a>
                         </li>

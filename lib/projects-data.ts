@@ -22,39 +22,12 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    slug: "trinnov-audio-internship",
-    title: "RnD Intern at Trinnov Audio",
-    shortDescription: "Working on ML/DSP methods to extract loudspeaker characteristics from room measurements for improved calibration and equalization.",
-    image: "/project-images/trinnov-image.png", // Assuming a placeholder image for now
-    tags: ["ML", "DSP", "Acoustics", "Python", "PyTorch", "Room Measurements"],
-    demoLink: "https://www.trinnov.com/",
-    codeLink: "",
-    challenge: "The internship focuses on developing advanced ML/DSP methods to extract loudspeaker (source) characteristics from room measurements. This is crucial for enabling improved calibration and equalisation in complex acoustic environments. The project involves heavy simulation, model training, and validation on real-world data.",
-    role: "Working as a full-time RnD intern at Trinnov Audio (Paris), supervised by Romain Couderc and Théophile Dupré. The project is co-supervised by Inria (Antoine Deleforge, Jean-Daniel Pascal, and Cedric Foy). The research team is headed by Miguel Moleron (Scientific Manager) and Axel Coulon (General Manager).",
-    collaborators: [
-      { name: "Romain Couderc (Supervisor)", link: "#" },
-      { name: "Théophile Dupré (Supervisor)", link: "https://www.researchgate.net/profile/Theophile_Dupre" },
-      { name: "Miguel Moleron (Scientific Manager)", link: "https://www.linkedin.com/in/miguelmoleron/" },
-      { name: "Antoine Deleforge (Inria)", link: "https://members.loria.fr/ADeleforge/home/" }
-    ],
-    solution: "Developing a deep learning framework to decouple loudspeaker responses from room acoustics using sparse measurements. This involves architectural design of neural networks that can generalize across various room types and loudspeaker configurations.",
-    keyTechniques: [
-      "Machine Learning for Audio",
-      "Digital Signal Processing (DSP)",
-      "Room Acoustic Simulation",
-      "Loudspeaker Characteristic Extraction",
-      "Model Training and Validation on Real Data"
-    ],
-    results: "Currently in progress. Actively contributing to the research and development of next-generation calibration technologies at Trinnov.",
-    architectureImg: ""
-  },
-  {
     slug: "cadenza-icassp",
     title: "Intrusive Lyric Intelligibility (ICASSP Cadenza)",
     shortDescription: "Ranked 2nd in the Cadenza Challenge. Hybrid attention network + tree-based regressors for predicting lyric intelligibility in music.",
     image: "/project-images/cadenza-image.png",
     tags: ["Hybrid Attention", "Ensemble Learning", "Audio Flamingo", "ICASSP 2026", "Python"],
-    demoLink: "https://github.com/vvk-mhn/cad_icassp_2026/tree/main",
+    demoLink: "https://ieeexplore.ieee.org/document/11464474",
     codeLink: "https://github.com/vvk-mhn/cad_icassp_2026/tree/main",
     leaderboardLink: "https://eval.ai/web/challenges/challenge-page/2634/leaderboard/6866",
     challenge: "The Cadenza ICASSP 2026 Challenge tasked systems to predict lyric intelligibility rates from perceptual experiments on accompanied singing, including simulated hearing loss. The main difficulty was building an intrusive model that accounts for acoustic quality, lexical alignment, and contextual cues in music mixtures.",

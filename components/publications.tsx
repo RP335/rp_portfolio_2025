@@ -26,8 +26,8 @@ export default function Publications() {
     {
       title: "INTRUSIVE LYRIC INTELLIGIBILITY VIA HYBRID ATTENTION OVER ASR EMBEDDINGS AND FEATURE BLOCKS",
       authors: "Rahul Peter, Vivek Mohan, Seralathan Subramanian, Lauri Juvela",
-      venue: "ICASSP 2026 (Accepted, Paper #18944)",
-      link: "#",
+      venue: "ICASSP 2026 (Published)",
+      link: "https://ieeexplore.ieee.org/document/11464474",
     },
   ]
 

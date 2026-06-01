@@ -5,12 +5,22 @@ export default function Experience() {
     {
       type: "work",
       title: "RnD Intern – Trinnov Audio",
-      organization: "Trinnov Audio, Paris (co-supervised by Inria)",
+      organization: (
+        <span>
+          <a href="https://www.trinnov.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Trinnov Audio</a>, Paris (co-supervised by <a href="https://www.inria.fr/en" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Inria</a>)
+        </span>
+      ),
       period: "Feb 2026 – Present",
-      description:
-        "Developing ML/DSP methods to extract loudspeaker characteristics from room measurements for improved calibration. Focus on simulation, model training, and validation on real-world data.",
+      description: (
+        <span>
+          Developing ML/DSP methods to extract loudspeaker characteristics from room measurements for improved calibration. 
+          Supervised by Romain Couderc and <a href="https://www.researchgate.net/profile/Theophile_Dupre" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Théophile Dupré</a>. 
+          Co-supervised by <a href="https://members.loria.fr/ADeleforge/home/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Antoine Deleforge</a> (Inria).
+          Working within the research team headed by <a href="https://www.linkedin.com/in/miguelmoleron/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Miguel Moleron</a> and Axel Coulon.
+        </span>
+      ),
       achievements: [
-        "Collaborating with Inria research teams (Antoine Deleforge, et al.)",
+        "Collaborating with Inria research teams",
         "Exploring advanced ML architectures for room acoustic decoupling"
       ]
     },
