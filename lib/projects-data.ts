@@ -22,6 +22,33 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
+    slug: "trinnov-audio-internship",
+    title: "RnD Intern at Trinnov Audio",
+    shortDescription: "Working on ML/DSP methods to extract loudspeaker characteristics from room measurements for improved calibration and equalization.",
+    image: "/project-images/trinnov-image.png", // Assuming a placeholder image for now
+    tags: ["ML", "DSP", "Acoustics", "Python", "PyTorch", "Room Measurements"],
+    demoLink: "https://www.trinnov.com/",
+    codeLink: "",
+    challenge: "The internship focuses on developing advanced ML/DSP methods to extract loudspeaker (source) characteristics from room measurements. This is crucial for enabling improved calibration and equalisation in complex acoustic environments. The project involves heavy simulation, model training, and validation on real-world data.",
+    role: "Working as a full-time RnD intern at Trinnov Audio (Paris), supervised by Romain Couderc and Théophile Dupré. The project is co-supervised by Inria (Antoine Deleforge, Jean-Daniel Pascal, and Cedric Foy). The research team is headed by Miguel Moleron (Scientific Manager) and Axel Coulon (General Manager).",
+    collaborators: [
+      { name: "Romain Couderc (Supervisor)", link: "#" },
+      { name: "Théophile Dupré (Supervisor)", link: "https://www.researchgate.net/profile/Theophile_Dupre" },
+      { name: "Miguel Moleron (Scientific Manager)", link: "https://www.linkedin.com/in/miguelmoleron/" },
+      { name: "Antoine Deleforge (Inria)", link: "https://members.loria.fr/ADeleforge/home/" }
+    ],
+    solution: "Developing a deep learning framework to decouple loudspeaker responses from room acoustics using sparse measurements. This involves architectural design of neural networks that can generalize across various room types and loudspeaker configurations.",
+    keyTechniques: [
+      "Machine Learning for Audio",
+      "Digital Signal Processing (DSP)",
+      "Room Acoustic Simulation",
+      "Loudspeaker Characteristic Extraction",
+      "Model Training and Validation on Real Data"
+    ],
+    results: "Currently in progress. Actively contributing to the research and development of next-generation calibration technologies at Trinnov.",
+    architectureImg: ""
+  },
+  {
     slug: "cadenza-icassp",
     title: "Intrusive Lyric Intelligibility (ICASSP Cadenza)",
     shortDescription: "Ranked 2nd in the Cadenza Challenge. Hybrid attention network + tree-based regressors for predicting lyric intelligibility in music.",
@@ -55,9 +82,9 @@ export const projectsData: Project[] = [
     image: "/project-images/savox-otos-image.png",
     tags: ["Embedded Systems", "DSP", "NFC", "Product Development", "User Research", "C++", "Python"],
     demoLink: "",
-    codeLink: "https://github.com/RP335/personalised_hearing_pdp",
+    codeLink: "", // Removed as it's a private repo
     challenge: "Professional hearing protection headsets are largely one-size-fits-all in terms of audio tuning. Workers with noise-induced hearing loss struggle to understand speech, reducing safety and increasing fatigue. The challenge was to apply worker-specific hearing profiles to the audio signal without modifying the certified headset hardware, while ensuring ultra-low latency (<3ms) and preserving high speech intelligibility avoiding low-frequency masking.",
-    role: "As Tech Lead (Acoustics and Audio Tech), I engineered the real-time audio pipeline and DSP for embedded hardware (Teensy 3.2/4.0). I implemented the NAL-R prescription algorithm with 8-band WDRC compression and managed the overall technical architecture.",
+    role: "As Tech Lead (Acoustics and Audio Tech) for the Aalto PDP team, I engineered the real-time audio pipeline and DSP for embedded hardware (Teensy 3.2/4.0). I implemented the NAL-R prescription algorithm with 8-band WDRC compression and managed the overall technical architecture. The algorithm and work developed are now being mirrored to Savox and Otos for integration into their product lines.",
     collaborators: [
       { name: "Robert Örn (PM - Product Dev)", link: "https://www.linkedin.com/in/robert-orn/" },
       { name: "Hoang Tran (Tech - Robotics/Control)", link: "https://www.linkedin.com/in/hoanggtrann/" },
@@ -67,7 +94,7 @@ export const projectsData: Project[] = [
       { name: "Shotaro Tanigawa (Economy Officer - Economics)", link: "#" },
       { name: "Petteri Hyvarinen (External Consultant - Acoustics)", link: "#" }
     ],
-    solution: "We engineered an inline NFC-enabled DSP module that reads individual audiometric data from NFC-encoded cards and applies frequency-specific amplification using the NAL-R prescription formula to maximize speech intelligibility. The hardware employs an 8-band parametric equalisation architecture, which is being migrated to a multiband WDRC compression pipeline with soft-knee per-band compression.",
+    solution: "We engineered an inline NFC-enabled DSP module that reads individual audiometric data from NFC-encoded cards and applies frequency-specific amplification using the NAL-R prescription formula to maximize speech intelligibility. This work is confidential as it is being implemented by Savox and Otos, and may be patented or made available based on company rules in the future.",
     keyTechniques: [
       "NAL-R Prescription Formula Implementation",
       "8-Band Parametric EQ & WDRC Compression Pipeline",
@@ -76,7 +103,7 @@ export const projectsData: Project[] = [
       "Real-time Audio Processing (under 3ms latency)",
       "Psychoacoustic Testing with KEMAR mannequin"
     ],
-    results: "Validated a functional prototype that applies NAL-R correction in real-time. Conducted A/B comparisons with simulated hearing loss showing profound intelligibility improvements, shifting towards multi-band WDRC for optimal loudness growth.",
+    results: "Validated a functional prototype that applies NAL-R correction in real-time. The developed IP is currently being integrated by Savox and Otos. Source code is private due to confidentiality agreements.",
     architectureImg: "/project-images/kemar_head_diagram.jpeg",
     gallery: [
       "/project-images/electronics_and_stuff_raw.jpg",

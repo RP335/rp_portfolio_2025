@@ -85,7 +85,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          I quit my job as a software engineer to pursue my research in Audio/Acoustics. Currently at Aalto University majoring in Acoustics and Audio Tech.
+          M.Sc. student in Acoustics and Audio Tech at Aalto University and currently an RnD Intern at Trinnov Audio, Paris.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

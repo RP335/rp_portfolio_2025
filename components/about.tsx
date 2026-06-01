@@ -26,7 +26,7 @@ export default function About() {
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Background</h3>
                 <p className="text-gray-600">
-                  I spent 2 years at PineLabs building scalable fintech microservices (Kotlin + Rust + Docker/Kubernetes), automating deployments, and optimizing webhook failure pipelines. Under the hood I mastered CI/CD, cloud infra and high-throughput data processing. Just right after I left my job, I've been invested in spatial audio and 3D signal processing research (more particularly sound source localization). Other than that I engage in audio information retrieval and deep learning for audio signal processing.
+                  Following 2 years at PineLabs building scalable fintech microservices, I transitioned into specialized acoustics and audio research. Currently, I'm an RnD Intern at Trinnov Audio in Paris, working on advanced ML/DSP methods for loudspeaker characterization in collaboration with Inria. Living and working in France has been an enriching experience, allowing me to contribute to cutting-edge audio technologies while immersing myself in a new cultural and professional environment that bridges industry and academia.
                 </p>
               </div>
             </div>
@@ -36,10 +36,10 @@ export default function About() {
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Focus Areas</h3>
                 <p className="text-gray-600">
+                  • ML/DSP for Calibration: Developing models to extract source characteristics from room measurements (current focus at Trinnov)<br />
                   • Spatial Audio & SELD: Sound event localization with Conformer models trained on synthetic stereo via SpatialScaper<br />
-                  • DCASE & QVIM Challenges: Ensemble-based ML pipelines (PaSST, PANNs, BEATs) with DSP-driven data augmentation<br />
                   • Acoustics & TDOA: ICASSP research on beamforming and adversarial masking for robust source localization<br />
-                  • Psychoacoustics & Interactive Audio: Designing real-time DSP tools for immersive audio experiences (plugin in the works)
+                  • Personalised Hearing: Real-time embedded DSP pipelines for hearing protection (Savox/Otos)
                 </p>
               </div>
             </div>

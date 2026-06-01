@@ -1,9 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Github, Linkedin, Mail, Globe, Phone, FileText } from "lucide-react" // Replaced MapPin/Download with FileText for generic doc icon if needed
+import { Github, Linkedin, Mail, Globe, Phone } from "lucide-react"
 import Link from "next/link"
 
 export default function ResumePage() {
@@ -43,14 +41,27 @@ export default function ResumePage() {
                     <h2 className="text-xl font-bold text-gray-900 uppercase tracking-wide border-b pb-2 mb-4">Summary</h2>
                     <p className="text-gray-700 leading-relaxed text-justify">
                         M.Sc. student in Acoustics & Audio Technology at Aalto University, Finland.
+                        Currently working as an RnD Intern at Trinnov Audio (Paris) on ML/DSP methods for loudspeaker characterization.
                         Combined expertise in audio machine learning, software engineering (Rust, Kotlin, Python), signal processing, and acoustics research.
-                        Currently collaborating with Savox and Otos on a personalized hearing-protection system for first responders (real-time DSP on Tympan).
+                        Developed a personalized hearing-protection system for first responders (real-time DSP) now being integrated by Savox and Otos.
                     </p>
                 </section>
 
                 {/* Work Experience */}
                 <section className="space-y-6">
                     <h2 className="text-xl font-bold text-gray-900 uppercase tracking-wide border-b pb-2 mb-4">Work Experience</h2>
+
+                    <div className="space-y-2">
+                        <div className="flex justify-between items-baseline flex-wrap">
+                            <h3 className="text-lg font-bold text-gray-900">RnD Intern, Trinnov Audio</h3>
+                            <span className="text-sm text-gray-600 font-medium">Feb 2026 -- Present</span>
+                        </div>
+                        <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1 text-justify">
+                            <li>Working as a full-time intern at Trinnov Audio in Paris, supervised by Romain Couderc and Théophile Dupré, and co-supervised by Inria (Antoine Deleforge, Jean-Daniel Pascal, and Cedric Foy).</li>
+                            <li>Developing ML/DSP methods to extract loudspeaker (source) characteristics from room measurements, enabling improved calibration and equalisation.</li>
+                            <li>Focus on simulation, model training, and validation on real-world data within the research team headed by Miguel Moleron and Axel Coulon.</li>
+                        </ul>
+                    </div>
 
                     <div className="space-y-2">
                         <div className="flex justify-between items-baseline flex-wrap">
@@ -125,11 +136,12 @@ export default function ResumePage() {
                     <div className="space-y-2">
                         <h3 className="text-lg font-bold text-gray-900">Personalized Hearing Protection for First Responders</h3>
                         <p className="text-sm text-gray-700 text-justify">
-                            Defined a smart audio module between radio/comms and headset to balance protection and intelligibility while preserving speech cues.
+                            As Tech Lead for the Aalto PDP team, developed a smart audio module between radio/comms and headset to balance protection and intelligibility. The developed IP and algorithms are currently being integrated by <strong>Savox</strong> and <strong>Otos</strong>.
                         </p>
                         <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1 text-justify">
-                            <li>Real-time DSP pipeline (WDRC, noise reduction, safety limiter, smart mixing) targeting &lt;10ms latency on Tympan Rev F.</li>
-                            <li>Personalization using audiogram + PAR fit-check + noise dose tracking; planned validation with STOI, LAeq, latency, and field tests.</li>
+                            <li>Real-time DSP pipeline (WDRC, noise reduction, safety limiter, smart mixing) targeting &lt;3ms latency on embedded hardware.</li>
+                            <li>Personalization using audiogram + PAR fit-check + noise dose tracking.</li>
+                            <li>Work is confidential; currently being implemented/patented by industrial partners.</li>
                         </ul>
                     </div>
 
@@ -212,7 +224,7 @@ export default function ResumePage() {
                 </div>
 
                 <div className="text-center text-xs text-gray-400 mt-8 pb-4">
-                    Last updated: July 24, 2025
+                    Last updated: June 1, 2026
                 </div>
 
             </div>

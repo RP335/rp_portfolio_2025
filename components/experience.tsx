@@ -2,7 +2,18 @@ import { GraduationCap, Briefcase, Award } from "lucide-react"
 
 export default function Experience() {
   const experiences = [
-
+    {
+      type: "work",
+      title: "RnD Intern – Trinnov Audio",
+      organization: "Trinnov Audio, Paris (co-supervised by Inria)",
+      period: "Feb 2026 – Present",
+      description:
+        "Developing ML/DSP methods to extract loudspeaker characteristics from room measurements for improved calibration. Focus on simulation, model training, and validation on real-world data.",
+      achievements: [
+        "Collaborating with Inria research teams (Antoine Deleforge, et al.)",
+        "Exploring advanced ML architectures for room acoustic decoupling"
+      ]
+    },
     {
       type: "education",
       title: "M.Sc. Acoustics & Audio Technology (incoming)",
