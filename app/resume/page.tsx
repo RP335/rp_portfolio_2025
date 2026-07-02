@@ -3,11 +3,13 @@
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, Mail, Globe, Phone } from "lucide-react"
 import Link from "next/link"
+import LensBanner from "@/components/lens-banner"
 
 export default function ResumePage() {
     return (
-        <div className="min-h-screen bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 font-sans">
-            <div className="max-w-4xl mx-auto space-y-8">
+        <div className="min-h-screen bg-gray-50 font-sans">
+            <LensBanner />
+            <div className="max-w-4xl mx-auto space-y-8 py-16 px-4 sm:px-6 lg:px-8">
 
                 {/* Header Section */}
                 <section className="bg-white rounded-2xl shadow-sm p-8 text-center sm:text-left sm:flex sm:items-center sm:justify-between">

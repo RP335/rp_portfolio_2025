@@ -7,16 +7,16 @@ export default function Experience() {
       title: "RnD Intern – Trinnov Audio",
       organization: (
         <span>
-          <a href="https://www.trinnov.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Trinnov Audio</a>, Paris (co-supervised by <a href="https://www.inria.fr/en" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Inria</a>)
+          <a href="https://www.trinnov.com/" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline">Trinnov Audio</a>, Paris (co-supervised by <a href="https://www.inria.fr/en" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline">Inria</a>)
         </span>
       ),
       period: "Feb 2026 – Present",
       description: (
         <span>
-          Developing ML/DSP methods to extract loudspeaker characteristics from room measurements for improved calibration. 
-          Supervised by Romain Couderc and <a href="https://www.researchgate.net/profile/Theophile_Dupre" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Théophile Dupré</a>. 
-          Co-supervised by <a href="https://members.loria.fr/ADeleforge/home/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Antoine Deleforge</a> (Inria).
-          Working within the research team headed by <a href="https://www.linkedin.com/in/miguelmoleron/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Miguel Moleron</a> and Axel Coulon.
+          Developing ML/DSP methods to extract loudspeaker characteristics from room measurements for improved calibration.
+          Supervised by Romain Couderc and <a href="https://www.researchgate.net/profile/Theophile_Dupre" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline">Théophile Dupré</a>.
+          Co-supervised by <a href="https://members.loria.fr/ADeleforge/home/" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline">Antoine Deleforge</a> (Inria).
+          Working within the research team headed by <a href="https://www.linkedin.com/in/miguelmoleron/" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline">Miguel Moleron</a> and Axel Coulon.
         </span>
       ),
       achievements: [
@@ -79,45 +79,59 @@ export default function Experience() {
   }
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="relative bg-[#070b18] py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Experience & Education</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="mb-3 font-mono text-xs tracking-[0.35em] text-cyan-300/80">
+            IMPULSE RESPONSE
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Experience & Education</h2>
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
             Building expertise through education and hands-on experience
           </p>
         </div>
 
-        <div className="space-y-8">
-          {experiences.map((exp, index) => {
-            const IconComponent = getIcon(exp.type)
-            return (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-lg">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <IconComponent className="h-6 w-6 text-blue-600" />
+        {/* timeline rail */}
+        <div className="relative">
+          <div className="pointer-events-none absolute left-[2.45rem] top-2 bottom-2 hidden w-px bg-gradient-to-b from-cyan-400/50 via-fuchsia-400/30 to-transparent md:block" />
+
+          <div className="space-y-8">
+            {experiences.map((exp, index) => {
+              const IconComponent = getIcon(exp.type)
+              return (
+                <div
+                  key={index}
+                  className="group relative rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.12)]"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 rounded-lg border border-cyan-400/30 bg-cyan-400/10 flex items-center justify-center transition-shadow duration-300 group-hover:shadow-[0_0_16px_rgba(34,211,238,0.4)]">
+                        <IconComponent className="h-6 w-6 text-cyan-300" />
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex-grow">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                      <h3 className="text-xl font-semibold text-gray-900">{exp.title}</h3>
-                      <span className="text-blue-600 font-medium">{exp.period}</span>
-                    </div>
-                    <p className="text-gray-700 font-medium mb-2">{exp.organization}</p>
-                    <p className="text-gray-600 mb-4">{exp.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.achievements.map((achievement, achIndex) => (
-                        <span key={achIndex} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                          {achievement}
-                        </span>
-                      ))}
+                    <div className="flex-grow">
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                        <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
+                        <span className="font-mono text-sm text-fuchsia-300/90">{exp.period}</span>
+                      </div>
+                      <p className="text-slate-300 font-medium mb-2">{exp.organization}</p>
+                      <p className="text-slate-400 mb-4">{exp.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.achievements.map((achievement, achIndex) => (
+                          <span
+                            key={achIndex}
+                            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-300"
+                          >
+                            {achievement}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>
