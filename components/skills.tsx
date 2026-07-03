@@ -71,8 +71,7 @@ export default function Skills() {
             Technical Skills
           </h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-            Building expertise across the acoustics spectrum — hover a band to
-            see it light up
+            Building expertise across the acoustics spectrum
           </p>
         </div>
 

@@ -37,10 +37,10 @@ export default function Hero() {
       {/* HUD: live modal readout */}
       <div className="pointer-events-none absolute left-4 top-20 hidden select-none font-mono text-[11px] leading-relaxed tracking-wider text-cyan-300/70 sm:left-8 md:block">
         <p>
-          ROOM&nbsp;&nbsp;: 6.0 m × 4.0 m · c = 343 m/s
+          6.0 m × 4.0 m · c = 343 m/s
         </p>
         <p className="text-cyan-200">
-          MODE&nbsp;&nbsp;: ({mode.nx}, {mode.ny}) · f ={" "}
+          ({mode.nx}, {mode.ny}) · f ={" "}
           {mode.freq.toFixed(1)} Hz
         </p>
         <p className="text-fuchsia-300/70">
