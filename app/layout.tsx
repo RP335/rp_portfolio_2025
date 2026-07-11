@@ -16,7 +16,10 @@ export const metadata: Metadata = {
     description: "Portfolio showcasing my transition into acoustics engineering and sound design",
     type: "website",
   },
-    generator: 'v0.dev'
+    generator: 'v0.dev',
+    other: {
+      "google-adsense-account": "ca-pub-5064607381834290",
+    },
 }
 
 export default function RootLayout({
@@ -26,15 +29,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
+      <body className={`${inter.className} antialiased`}>
+        {children}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5064607381834290"
           crossOrigin="anonymous"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
-      </head>
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      </body>
     </html>
   )
 }
