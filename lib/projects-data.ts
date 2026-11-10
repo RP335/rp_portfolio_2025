@@ -18,9 +18,108 @@ export interface Project {
   results?: string
   architectureImg?: string
   gallery?: string[]
+  highlights?: { value: string; label: string }[]
 }
 
 export const projectsData: Project[] = [
+  {
+    slug: "recorder-mystery-tones",
+    title: "Mystery Tones in the Recorder",
+    shortDescription: "Coupled flow–acoustic simulations of a capped recorder head to track down a faint note that sounds one octave below the main tone. Ongoing research at MATINE Lab, KAIST.",
+    image: "/project-images/recorder-vorticity-loop.webp",
+    tags: ["Computational Aeroacoustics", "Navier–Stokes", "Finite Differences", "GPU / HPC", "Musical Acoustics"],
+    highlights: [
+      { value: "f₀/2", label: "the mystery tone" },
+      { value: "3D", label: "coupled flow + sound" },
+      { value: "GPU", label: "FD solvers" },
+    ],
+    challenge: "Blow harder into a recorder head and the pitch does not simply rise. It whistles, then drops to a lower note, and close to that drop a faint extra tone appears exactly one octave below the main pitch: the half-harmonic. It comes out of the coupling between a thin, unstable air jet, a sharp edge (the labium) and the resonating air behind it. A linear acoustic model can't explain it, and it is very hard to see inside a real instrument.",
+    role: "Visiting research student at MATINE Lab, KAIST, working with Jin Woo Lee on his GPU finite-difference flow–acoustic solver. I build the instrument geometry, run the jet-speed sweeps on the cluster, work on solver performance, and handle the signal analysis and visualisation of the flow and the sound.",
+    collaborators: [
+      { name: "Jin Woo Lee", link: "https://matine-kaist.github.io/" },
+    ],
+    solution: "We rebuild the head in 3D and solve the incompressible flow and the sound field together with a hydrodynamic/acoustic splitting method. The jet and its vortices act as a Lighthill-type acoustic source, and the sound pushes back on the jet (two-way coupling). Virtual microphones in the mouth window, inside the cavity and in the far field record each blowing speed, so the simulation can be listened to as well as looked at. Filtering the flow field at the main pitch and at half of it shows where in the flow the mystery tone lives.",
+    keyTechniques: [
+      "Incompressible Navier–Stokes with a hydrodynamic/acoustic splitting method",
+      "Lighthill-type acoustic source terms with two-way flow–sound coupling",
+      "GPU finite-difference solvers run on an HPC cluster",
+      "3D geometry of a capped recorder head with a sub-millimetre jet channel",
+      "Virtual probes, spectral analysis and phase-band filtering of the flow (f₀ vs f₀/2)",
+      "Vortex identification with the Q-criterion, visualised in Python and ParaView",
+    ],
+    results: "Ongoing. The simulated blowing sweep reproduces the sequence heard in mechanical-mouth experiments: silence, a high whistle, the octave-below tone, then the drop to a lower note. More soon.",
+    gallery: [
+      "/project-images/recorder-anim-u15.webp",
+      "/project-images/recorder-vortex-3d.webp",
+      "/project-images/recorder-phase-frames.webp",
+    ],
+  },
+  {
+    slug: "pianoid",
+    title: "PianoID: Inverse Physical Modelling of the Piano",
+    shortDescription: "Calibrating a real-time physical piano model to one specific acoustic instrument from a sparse set of recorded notes: analytical string identification, 88-key compass interpolation, and a nonlinear hammer inverse. JUCE/C++ prototype running; research ongoing.",
+    image: "/project-images/ui_screenshots_pianoID/screenshots/01_instrument_perform.png",
+    tags: ["Computational Acoustics", "Inverse Problems", "System Identification", "Physical Modelling", "JUCE / C++", "DSP"],
+    highlights: [
+      { value: "4", label: "stage inverse" },
+      { value: "88", label: "keys from ~10" },
+      { value: "12 kHz", label: "modal bandwidth" },
+    ],
+    challenge: "Matching a physical piano model to a real instrument is an ill-posed inverse problem. From a handful of notes recorded in an untreated room, you have to recover hundreds of coupled parameters: string stiffness and inharmonicity, frequency-dependent losses, unison detuning, nonlinear hysteretic hammer felt, and soundboard radiation. Black-box neural capture (the way amp modellers work) cannot help, because a piano has no input jack for a test sweep, and a snapshot trained on a few notes cannot extrapolate to 88 keys, 128 velocities, pedals and sympathetic resonance. End-to-end gradient descent through a recursive waveguide or FDTD scheme is not much better: backpropagating through tens of thousands of time steps is unstable, and a fraction-of-a-percent error in f₁ or B misaligns the upper partials so badly that spectral losses stop carrying useful gradients.",
+    role: "I designed and built the real-time JUCE/C++ engine (codename sora), the plugin UI and the analysis tooling, and I'm leading the calibration research.",
+    solution: "The pipeline exploits the piano's physical modularity, so the parameters that can be solved in closed form never go near an optimiser. Stage 1 is analytical: a Partial Frequencies Deviation loop (Rauhala–Välimäki) jointly locks f₁ and B from f_k = k·f₁·√(1 + B·k²), restricted to partials 6–12 on double-wound bass strings. Per-partial decay rates σ_k ≈ b₁ + b₃·ω_k² come from STFT tracking with Bank's τ⁴-weighted regression, and unison detuning is read off the beat nodes. Stage 2 takes 9–15 anchor notes to all 88 keys with Rigaud's dual-bridge model, B(m) = exp(b_B(m)) + exp(b_T(m)), and rebuilds the Railsback stretch curve from octave-type matching. With the partials already aligned, Stage 3 becomes a well-conditioned search over Stulov's hysteretic felt parameters {H₀, p, τ₀, ε_h, α}: an encoder trained offline on synthetic renders of the engine gives the starting point, and Ceres (Jet autodiff, Levenberg–Marquardt) or NLopt refines it against a multi-resolution STFT loss on the first 100 ms. Stage 4 recovers the soundboard, cabinet and microphone response by Tikhonov-regularised spectral division against the simulated bridge force, then fits a minimum-phase FIR, an FDN tail and the damper and release behaviour. The target is a full calibration in under a minute on a background CPU thread, fully offline.",
+    keyTechniques: [
+      "Stiff lossy string PDE (Chaigne–Askenfelt) realised as modal synthesis up to 12 kHz",
+      "Joint f₁ / inharmonicity B estimation (PFD algorithm), with a double-wound bass correction",
+      "Frequency-dependent loss fitting, σ_k ≈ b₁ + b₃·ω_k², with perceptually weighted least squares",
+      "Sparse-to-dense compass interpolation (Rigaud dual-bridge model) and Railsback stretch tuning",
+      "Nonlinear hysteretic hammer inverse: neural initialisation plus local Ceres / NLopt refinement",
+      "Regularised spectral deconvolution of soundboard radiation, minimum-phase FIR, FDN reverb",
+      "Thread-safe background calibration in JUCE with an atomic parameter swap into the audio thread",
+    ],
+    results: "Running today in the JUCE prototype: the forward model (strings, hammer, damping, unison, pedals, soundboard and air stages), per-note f₁, B and decay estimation from 3–9 labeled notes, the log-B compass view and stretch tuning with Scala import. In progress: the full Stage 1 loss and beating extraction, the hammer inverse (Stage 3) and soundboard deconvolution (Stage 4). Open questions: identifiability of the felt parameters, model mismatch, and generalising to notes and dynamics left out of the fit.",
+    architectureImg: "/project-images/pianoid-workflow.webp",
+    gallery: [
+      "/project-images/ui_screenshots_pianoID/screenshots/02_instrument_mechanics.png",
+      "/project-images/ui_screenshots_pianoID/screenshots/03_instrument_space.png",
+      "/project-images/ui_screenshots_pianoID/screenshots/04_inverse.png",
+      "/project-images/ui_screenshots_pianoID/screenshots/05_tuning.png",
+    ],
+  },
+  {
+    slug: "orbkord",
+    title: "OrbKord: Piano Analysis & Transcription",
+    shortDescription: "A browser app for studying harmony: real-time chord recognition, piano audio-to-MIDI transcription, a harmoniser and microtonal tunings. Live, with paying users.",
+    image: "/project-images/orbkord-hero-app.webp",
+    tags: ["Web Audio", "Web MIDI", "TransKun", "Music Theory", "Microtonal", "Product"],
+    demoLink: "https://orbkord.net",
+    highlights: [
+      { value: "700+", label: "monthly users" },
+      { value: "60+", label: "paid licences" },
+      { value: "63", label: "chord shapes" },
+    ],
+    challenge: "Most chord tools name one chord at a time from typed-in notes. They can't follow real playing with the sustain pedal down, can't take a piano recording as input, and stop at 12-tone equal temperament. I wanted one tool that names whatever a pianist is actually holding, whether it comes from a MIDI file, a keyboard or a recording.",
+    role: "I built and deployed OrbKord end to end: the in-browser chord engine and UI, the GPU-backed transcription service, accounts, licensing and payments. It sells as a one-time $15 licence, with credits for audio-to-MIDI.",
+    solution: "Everything except transcription runs in the browser, so the app costs almost nothing per user and can sell for a one-time price. Notes come from MIDI files, a MIDI keyboard (Web MIDI), the laptop keyboard or a piano recording. A sustain-aware recogniser names the held chord with its inversion, voicing, intervals and key-aware spelling, and draws it on a grand staff. Recordings go to a rented GPU server running TransKun-based piano transcription with custom expression post-processing (plus piano separation for noisy recordings), and the MIDI opens straight back in the app.",
+    keyTechniques: [
+      "Sustain-aware chord recognition across 63 chord shapes, with exact, jazz and simple naming",
+      "Key-aware note spelling in 15 keys, rendered on a grand staff",
+      "TransKun-based piano audio-to-MIDI on GPU, with piano separation for noisy recordings",
+      "Harmoniser and sequencer: 190 progressions, 22 moods, 5 comping styles",
+      "Microtonal tunings: 19-, 31-, 41- and 53-EDO, Scala import, MPE MIDI export",
+      "Sampled Rhodes and grand piano (6 velocity layers) with convolution reverb",
+      "1080p / 60 fps video export with audio",
+    ],
+    results: "700+ monthly users and 60+ paid licences. Run on a single MIDI file (Memories of Paris), it identified 164 distinct chords. Launched on Product Hunt on 9 November 2026.",
+    gallery: [
+      "/project-images/orbkord-stage-paris.webp",
+      "/project-images/orbkord-chord-panel.webp",
+      "/project-images/orbkord-harmonise.webp",
+      "/project-images/orbkord-iso-31edo.webp",
+      "/project-images/orbkord-a2m.webp",
+      "/project-images/orbkord-sequencer-side.webp",
+    ],
+  },
   {
     slug: "cadenza-icassp",
     title: "Intrusive Lyric Intelligibility (ICASSP Cadenza)",

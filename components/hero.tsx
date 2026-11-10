@@ -56,7 +56,7 @@ export default function Hero() {
           on the actual links, so the speaker stays grabbable everywhere */}
       <div className="pointer-events-none relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
         <p className="mb-6 font-mono text-xs tracking-[0.35em] text-cyan-300/90 sm:text-sm">
-          ACOUSTICS · DSP · MACHINE LEARNING
+          COMPUTATIONAL ACOUSTICS · DSP · MACHINE LEARNING
         </p>
 
         <h1
@@ -75,13 +75,15 @@ export default function Hero() {
         </h1>
 
         <p className="mb-5 max-w-3xl text-lg italic text-slate-200 [text-shadow:0_2px_24px_rgba(4,6,15,0.95),0_0_8px_rgba(4,6,15,0.8)] md:text-2xl">
-          &ldquo;What&apos;s a function of what the whole universe is doing is
-          you just like the wave being that of the ocean.&rdquo;
+         You are a function of what the whole universe is doing in the same way that a wave is a function of what the whole ocean is doing. — Alan Watts  
         </p>
 
-        <p className="mb-10 font-mono text-xs text-cyan-100 [text-shadow:0_0_10px_rgba(34,211,238,0.9),0_0_28px_rgba(34,211,238,0.55),0_2px_12px_rgba(4,6,15,0.9)] sm:text-sm">
-          M.Sc. Acoustics &amp; Audio Technology @ Aalto University · R&amp;D @
-          Trinnov Audio, Paris
+        <p className="mb-10 max-w-3xl font-mono text-xs leading-relaxed text-cyan-100 [text-shadow:0_0_10px_rgba(34,211,238,0.9),0_0_28px_rgba(34,211,238,0.55),0_2px_12px_rgba(4,6,15,0.9)] sm:text-sm">
+          Visiting Researcher @ MATINE Lab, KAIST · simulating the recorder&apos;s
+          mystery tones
+          <span className="mt-1 block text-cyan-100/70">
+            M.Sc. Acoustics &amp; Audio Technology @ Aalto University
+          </span>
         </p>
 
         <div className="mb-14 flex flex-col justify-center gap-4 sm:flex-row">

@@ -17,7 +17,7 @@ export default function ResumePage() {
                         <h1 className="text-4xl font-bold text-gray-900 tracking-tight">Rahul Peter</h1>
                         <p className="text-lg text-gray-600 mt-2">M.Sc. Student in Acoustics & Audio Technology</p>
                         <p className="text-sm text-gray-500 mt-1 flex items-center justify-center sm:justify-start gap-2">
-                            <Phone className="w-4 h-4" /> +91 84319 40842
+                            <Phone className="w-4 h-4" /> +358 44 950 2967
                         </p>
                     </div>
                     <div className="mt-4 sm:mt-0 flex flex-col sm:items-end gap-2 text-sm text-gray-600">
@@ -42,10 +42,9 @@ export default function ResumePage() {
                 <section>
                     <h2 className="text-xl font-bold text-gray-900 uppercase tracking-wide border-b pb-2 mb-4">Summary</h2>
                     <p className="text-gray-700 leading-relaxed text-justify">
-                        M.Sc. student in Acoustics & Audio Technology at Aalto University, Finland.
-                        Currently working as an RnD Intern at Trinnov Audio (Paris) on ML/DSP methods for loudspeaker characterization.
-                        Combined expertise in audio machine learning, software engineering (Rust, Kotlin, Python), signal processing, and acoustics research.
-                        Developed a personalized hearing-protection system for first responders (real-time DSP) now being integrated by Savox and Otos.
+                        M.Sc. student in Acoustics & Audio Technology at Aalto University, Finland, currently a Visiting Research Student at MATINE Lab, KAIST,
+                        after an R&D internship at Trinnov Audio, Paris. Research interests: computational acoustics, physical modelling, inverse problems,
+                        array signal processing and audio machine learning, backed by two years of production software engineering (Rust, Kotlin, Python, C++).
                     </p>
                 </section>
 
@@ -55,13 +54,25 @@ export default function ResumePage() {
 
                     <div className="space-y-2">
                         <div className="flex justify-between items-baseline flex-wrap">
-                            <h3 className="text-lg font-bold text-gray-900">RnD Intern, <a href="https://www.trinnov.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Trinnov Audio</a></h3>
-                            <span className="text-sm text-gray-600 font-medium">Feb 2026 -- Present</span>
+                            <h3 className="text-lg font-bold text-gray-900">Visiting Research Student, <a href="https://matine-kaist.github.io/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">MATINE Lab, KAIST</a></h3>
+                            <span className="text-sm text-gray-600 font-medium">Sept 2026 -- Present</span>
                         </div>
                         <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1 text-justify">
-                            <li>Working as a full-time intern at Trinnov Audio in Paris, supervised by Romain Couderc and Théophile Dupré, and co-supervised by <a href="https://www.inria.fr/en" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Inria</a> (Antoine Deleforge, Jean-Daniel Pascal, and Cedric Foy).</li>
-                            <li>Developing ML/DSP methods to extract loudspeaker (source) characteristics from room measurements, enabling improved calibration and equalisation.</li>
-                            <li>Focus on simulation, model training, and validation on real-world data within the research team headed by Miguel Moleron and Axel Coulon.</li>
+                            <li>Visiting graduate student in the Musical Acoustics and Transducer Instrument Engineering Laboratory, KAIST Graduate School of Culture Technology.</li>
+                            <li>Computational modelling of flow-induced sound in air-jet instruments with coupled hydrodynamic/acoustic splitting methods: incompressible flow, Lighthill-type acoustic sources and wave-based propagation.</li>
+                            <li>GPU-accelerated finite-difference / wave-equation solvers for simulating and inverse-modelling a recorder head, to find the cause of the half-harmonic (&ldquo;mystery&rdquo;) tones. <a href="/projects/recorder-mystery-tones" className="text-blue-600 hover:underline">Project page</a></li>
+                        </ul>
+                    </div>
+
+                    <div className="space-y-2">
+                        <div className="flex justify-between items-baseline flex-wrap">
+                            <h3 className="text-lg font-bold text-gray-900">R&D Intern, <a href="https://www.trinnov.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Trinnov Audio</a> (co-supervised by <a href="https://www.inria.fr/en" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Inria</a>)</h3>
+                            <span className="text-sm text-gray-600 font-medium">Feb 2026 -- Aug 2026</span>
+                        </div>
+                        <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1 text-justify">
+                            <li>ML/DSP research under NDA on low-frequency loudspeaker–room interaction: modal behaviour, source and room characterisation, and calibration. Supervised by Romain Couderc and Théophile Dupré, co-supervised by Antoine Deleforge, Jean-Daniel Pascal and Cedric Foy (Inria).</li>
+                            <li>Built simulation and analysis pipelines that extract loudspeaker characteristics from in-room measurements with data-driven and physics-guided methods, validated on real measurement datasets.</li>
+                            <li>The method is headed for production ahead of the downstream <a href="https://www.trinnov.com/en/technologies/active-acoustics/waveforming/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Waveforming</a> stage; a patent and publication are in progress.</li>
                         </ul>
                     </div>
 
@@ -106,6 +117,15 @@ export default function ResumePage() {
                 {/* Projects */}
                 <section className="space-y-6">
                     <h2 className="text-xl font-bold text-gray-900 uppercase tracking-wide border-b pb-2 mb-4">Projects</h2>
+
+                    <div className="space-y-2">
+                        <h3 className="text-lg font-bold text-gray-900">PianoID: Inverse Physical Modelling of the Piano <span className="text-sm font-normal italic text-gray-500">(ongoing)</span></h3>
+                        <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1 text-justify">
+                            <li>Building a real-time JUCE/C++ physical piano model: a stiff, lossy string PDE realised as modal synthesis, a Stulov hysteretic hammer, unison, pedals and soundboard.</li>
+                            <li>Developing a sample-to-model calibration pipeline that inverts 9–15 recorded notes into 88-key parameters: analytical f₁/B and decay identification, dual-bridge compass interpolation, and a nonlinear hammer inverse (neural initialisation + Ceres/NLopt refinement).</li>
+                            <li>Research focus: parameter identifiability, model mismatch, and generalisation to notes and dynamics outside the fit. <a href="/projects/pianoid" className="text-blue-600 hover:underline">Project page</a></li>
+                        </ul>
+                    </div>
 
                     <div className="space-y-2">
                         <h3 className="text-lg font-bold text-gray-900">Multimodal Lyric Intelligibility (ICASSP Cadenza)</h3>
@@ -194,7 +214,7 @@ export default function ResumePage() {
                             <div>
                                 <span className="font-medium text-gray-900">2025 -- Present</span> <span className="mx-2">M.Sc., Acoustics and Audio Technology, <strong>Aalto University</strong>, Espoo, Finland</span>
                             </div>
-                            <a href="https://drive.google.com/file/d/1ORS3tgQssICOc8uHI9eK302wExFgVe99/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium whitespace-nowrap">GPA: 4.44/5.00</a>
+                            <a href="https://drive.google.com/file/d/1n0v4StrVGXWnAw8lRgUdyA_-ly9x7Ca5/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium whitespace-nowrap">GPA: 4.43/5.00</a>
                         </div>
                         <div className="flex justify-between flex-wrap">
                             <div>
@@ -209,14 +229,20 @@ export default function ResumePage() {
                 <section className="space-y-6">
                     <h2 className="text-xl font-bold text-gray-900 uppercase tracking-wide border-b pb-2 mb-4">Skills</h2>
                     <div className="grid grid-cols-[160px_1fr] gap-4 text-sm">
-                        <div className="font-semibold text-gray-900">Audio / Research</div>
-                        <div className="text-gray-700">Audio Machine Learning, Sound Event Localization, Spatial Audio Synthesis, Signal Processing</div>
+                        <div className="font-semibold text-gray-900">Computational Acoustics</div>
+                        <div className="text-gray-700">Finite-difference / FDTD wave solvers, incompressible flow and aeroacoustics (Lighthill analogy, hydrodynamic/acoustic splitting), physical modelling synthesis, inverse problems and system identification</div>
 
-                        <div className="font-semibold text-gray-900">Software / Dev</div>
-                        <div className="text-gray-700">Rust, Kotlin, Python, Docker, CI/CD, Team Collaboration</div>
+                        <div className="font-semibold text-gray-900">Signal Processing / ML</div>
+                        <div className="text-gray-700">Spectral analysis and partial tracking, room and loudspeaker calibration, array processing (TDOA, beamforming, spherical harmonics), audio machine learning, sound event localisation</div>
 
-                        <div className="font-semibold text-gray-900">Tools / Frameworks</div>
-                        <div className="text-gray-700">TensorFlow, PyTorch, SpatialScaper, JUCE, Git, AWS</div>
+                        <div className="font-semibold text-gray-900">Programming</div>
+                        <div className="text-gray-700">Python (NumPy, PyTorch), C++ (JUCE), Rust, Kotlin, MATLAB, GPU workflows on HPC clusters</div>
+
+                        <div className="font-semibold text-gray-900">Tools</div>
+                        <div className="text-gray-700">ParaView, SpatialScaper, Git, Docker, CI/CD, AWS</div>
+
+                        <div className="font-semibold text-gray-900">Music</div>
+                        <div className="text-gray-700">Session piano, composition, production, mixing and mastering</div>
                     </div>
                 </section>
 
@@ -229,7 +255,7 @@ export default function ResumePage() {
                 </div>
 
                 <div className="text-center text-xs text-gray-400 mt-8 pb-4">
-                    Last updated: June 1, 2026
+                    Last updated: November 10, 2026
                 </div>
 
             </div>

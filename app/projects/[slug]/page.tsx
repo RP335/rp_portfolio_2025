@@ -84,6 +84,7 @@ export default async function ProjectDetailsPage(props: { params: Promise<{ slug
           {/* Right Column (Meta) */}
           <div className="lg:col-span-1">
             <div className="sticky top-28 bg-white p-6 rounded-lg shadow-md space-y-6">
+              {(project.demoLink || project.codeLink || project.leaderboardLink) && (
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-3">Project Links</h3>
                 <div className="flex flex-col space-y-3">
@@ -107,6 +108,17 @@ export default async function ProjectDetailsPage(props: { params: Promise<{ slug
                   )}
                 </div>
               </div>
+              )}
+              {project.highlights && project.highlights.length > 0 && (
+                <dl className="space-y-2">
+                  {project.highlights.map((h) => (
+                    <div key={h.label} className="flex items-baseline justify-between gap-3 rounded-md bg-blue-50 px-3 py-2">
+                      <dt className="text-xs uppercase tracking-wide text-gray-500">{h.label}</dt>
+                      <dd className="whitespace-nowrap text-lg font-bold text-blue-700">{h.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-3">Results</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{project.results}</p>
@@ -117,11 +129,12 @@ export default async function ProjectDetailsPage(props: { params: Promise<{ slug
 
         {/* Architecture Diagram */}
         {project.architectureImg && (
-          <section className="mt-16">
+          <section className="relative left-1/2 mt-16 w-screen max-w-6xl -translate-x-1/2 px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">System Architecture</h2>
-            <div className="bg-white p-4 rounded-lg shadow-xl">
-              <Image src={project.architectureImg} alt={`${project.title} Architecture`} width={1200} height={800} className="rounded-md" />
-            </div>
+            <a href={project.architectureImg} target="_blank" rel="noopener noreferrer" className="block bg-white p-4 rounded-lg shadow-xl">
+              <Image src={project.architectureImg} alt={`${project.title} Architecture`} width={1200} height={800} className="rounded-md w-full h-auto" />
+            </a>
+            <p className="mt-3 text-center text-sm text-gray-500">Click the diagram to open it full size.</p>
           </section>
         )}
 

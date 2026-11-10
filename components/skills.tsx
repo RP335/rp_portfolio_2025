@@ -1,61 +1,66 @@
-import { BarChart3, Headphones, Zap, Mic, Settings, Code } from "lucide-react"
+import { Atom, Waves, BarChart3, Mic, Piano, Code } from "lucide-react"
 
 export default function Skills() {
   const skillCategories = [
     {
-      icon: BarChart3,
-      title: "Acoustic Measurement",
+      icon: Atom,
+      title: "Computational Acoustics",
       skills: [
-        "Sound Level Meters",
-        "FFT & STFT Analysis",
-        "Impulse Response",
-        "Reverberation Time",
-        "MATLAB/Python",
+        "Finite-difference / FDTD wave solvers",
+        "Incompressible Navier–Stokes & aeroacoustics (Lighthill)",
+        "Physical modelling (strings, hammers, modal synthesis)",
+        "Inverse problems & system identification",
+        "GPU / HPC simulation",
       ],
     },
     {
-      icon: Headphones,
-      title: "Audio Engineering",
-      skills: [
-        "DSP Algorithm Design",
-        "Pro Tools",
-        "Ableton Live",
-        "Loudspeaker Tuning",
-        "Real-time Audio Plugins",
-      ],
-    },
-    {
-      icon: Zap,
+      icon: Waves,
       title: "Signal Processing",
       skills: [
-        "TDOA & Beamforming",
-        "Variational Mode Decomposition",
-        "Log-Mel & FOA Feature Extraction",
+        "Spectral & partial tracking (STFT, inharmonicity)",
+        "Room modes & loudspeaker–room calibration",
+        "TDOA, beamforming, spherical harmonics",
+        "Real-time DSP (C++, embedded)",
       ],
     },
     {
       icon: Mic,
       title: "Machine Learning",
       skills: [
-        "PyTorch/TensorFlow",
-        "Conformer Architectures",
-        "Data Augmentation (SpatialScaper, RIRs)",
-        "SELD",
+        "PyTorch / TensorFlow",
+        "Physics-guided & hybrid models",
+        "Conformers, SELD, audio encoders",
+        "Data augmentation (SpatialScaper, RIRs)",
       ],
     },
     {
-      icon: Settings,
-      title: "Microservices & DevOps",
-      skills: ["Kotlin/Ktor", "Rust", "Docker & Kubernetes", "CI/CD", "AWS/GCP"],
+      icon: BarChart3,
+      title: "Acoustic Measurement",
+      skills: [
+        "Impulse responses & reverberation time",
+        "In-room loudspeaker measurements",
+        "KEMAR / psychoacoustic testing",
+        "MATLAB / Python analysis",
+      ],
+    },
+    {
+      icon: Piano,
+      title: "Audio & Music",
+      skills: [
+        "JUCE / C++ audio plugins",
+        "Session piano & composition",
+        "Production, mixing, mastering (Ableton, Pro Tools)",
+        "Max4Live (Gen~), MIDI / MPE",
+      ],
     },
     {
       icon: Code,
-      title: "Creative Coding",
+      title: "Software & Systems",
       skills: [
-        "React/Next.js",
-        "Three.js Waveform Visuals",
-        "Max4Live (Gen~)",
-        "MIDI Scripting",
+        "Python, C++, Rust, Kotlin",
+        "React / Next.js, Three.js, Web Audio",
+        "Docker, Kubernetes, CI/CD",
+        "AWS / GCP, ParaView",
       ],
     },
   ]
@@ -71,7 +76,7 @@ export default function Skills() {
             Technical Skills
           </h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-            Building expertise across the acoustics spectrum
+            As you can see, I've worked across a lot of domains but code's common to all of it (80% acoustics and audio signal-processing).
           </p>
         </div>
 

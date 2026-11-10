@@ -1,37 +1,61 @@
-import { GraduationCap, Briefcase, Award } from "lucide-react"
+import Link from "next/link"
+import { GraduationCap, Briefcase, Award, Atom } from "lucide-react"
 
 export default function Experience() {
   const experiences = [
     {
+      type: "research",
+      title: "Visiting Research Student – MATINE Lab, KAIST",
+      organization: (
+        <span>
+          <a href="https://matine-kaist.github.io/" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline">Musical Acoustics &amp; Transducer Instrument Engineering Lab</a>, Graduate School of Culture Technology, KAIST, Daejeon
+        </span>
+      ),
+      period: "Sept 2026 – Present",
+      description: (
+        <span>
+          Running coupled flow–acoustic simulations of a recorder head to work out where its &ldquo;mystery tones&rdquo; (half-harmonics) come from:
+          incompressible Navier–Stokes with a hydrodynamic/acoustic splitting method, Lighthill-type sources and GPU finite-difference solvers.
+          Working with Jin Woo Lee. <Link href="/projects/recorder-mystery-tones" className="text-cyan-300 hover:text-cyan-100 hover:underline">See the project</Link>.
+        </span>
+      ),
+      achievements: [
+        "Computational aeroacoustics",
+        "GPU / HPC simulation",
+        "Inverse modelling of the recorder head",
+      ]
+    },
+    {
       type: "work",
-      title: "RnD Intern – Trinnov Audio",
+      title: "R&D Intern – Trinnov Audio",
       organization: (
         <span>
           <a href="https://www.trinnov.com/" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline">Trinnov Audio</a>, Paris (co-supervised by <a href="https://www.inria.fr/en" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline">Inria</a>)
         </span>
       ),
-      period: "Feb 2026 – Present",
+      period: "Feb 2026 – Aug 2026",
       description: (
         <span>
-          Developing ML/DSP methods to extract loudspeaker characteristics from room measurements for improved calibration.
+          ML/DSP research on low-frequency loudspeaker–room interaction (modal behaviour, source and room characterisation, calibration), using data-driven and physics-guided methods validated on real measurements.
           Supervised by Romain Couderc and <a href="https://www.researchgate.net/profile/Theophile_Dupre" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline">Théophile Dupré</a>.
           Co-supervised by <a href="https://members.loria.fr/ADeleforge/home/" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline">Antoine Deleforge</a> (Inria).
           Working within the research team headed by <a href="https://www.linkedin.com/in/miguelmoleron/" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-100 hover:underline">Miguel Moleron</a> and Axel Coulon.
         </span>
       ),
       achievements: [
-        "Collaborating with Inria research teams",
-        "Exploring advanced ML architectures for room acoustic decoupling"
+        "Headed for production ahead of Waveforming",
+        "Patent and publication in progress",
+        "Co-supervised with Inria"
       ]
     },
     {
       type: "education",
-      title: "M.Sc. Acoustics & Audio Technology (incoming)",
+      title: "M.Sc. Acoustics & Audio Technology",
       organization: "Aalto University",
       period: "Sept 2025 – Present",
       description:
-        "Specializing in spatial audio, environmental noise control, and psychoacoustics.",
-      achievements: ["Awarded with the Aalto Excellency scholarship"]
+        "Focus on computational acoustics, physical modelling, audio signal processing and audio machine learning.",
+      achievements: ["GPA 4.43 / 5.00", "Awarded the Aalto Excellence scholarship"]
     },
     {
       type: "work",
@@ -41,7 +65,7 @@ export default function Experience() {
       description:
         "Designed and maintained Kotlin/Ktor microservices, built Rust DLQ processors for webhook reliability, and led CI/CD pipelines on Kubernetes.",
       achievements: [
-        "Reduced webhook failures by 36% with Rust retry logic",
+        "Cut webhook latency by 34% with custom Rust serialisation",
         "Automated 10+ deployment pipelines (Docker, Helm)",
       ]
     },
@@ -49,10 +73,10 @@ export default function Experience() {
       type: "work",
       title: "Researcher (part time) – Multimodal Information Processing Lab",
       organization: "IIT Kanpur",
-      period: "Jul 2024 – Sep 2024",
+      period: "Jun 2024 – Sep 2024",
       description:
-        "Conducted beamforming and TDOA experiments for source localization. Drafted an ICASSP and ASILOMAR paper on adversarial masking.",
-      achievements: ["Part of the research team for the publications"]
+        "Built the Adversarial Masking (Adv-M) framework for robust source localisation in the spherical-harmonic domain: a GAN-based real-time mask generator feeding a CNN DOA estimator, with TDOA-informed design choices.",
+      achievements: ["~30% better localisation accuracy", "44% lower RMSE", "Paper at IEEE Asilomar 2025"]
     },
     {
       type: "education",
@@ -73,6 +97,8 @@ export default function Experience() {
         return Briefcase
       case "certification":
         return Award
+      case "research":
+        return Atom
       default:
         return Briefcase
     }
@@ -87,7 +113,7 @@ export default function Experience() {
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Experience & Education</h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-            Building expertise through education and hands-on experience
+            Moving places quite a lot.
           </p>
         </div>
 

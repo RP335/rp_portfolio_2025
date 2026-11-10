@@ -16,7 +16,7 @@ export default function Projects() {
             Featured Projects
           </h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-            Showcasing practical applications of acoustic engineering principles
+            Some projects are proprietary but I've shared what's possible.
           </p>
         </div>
 
@@ -42,6 +42,25 @@ export default function Projects() {
                 <p className="text-slate-400 mb-4 flex-grow">
                   {project.shortDescription}
                 </p>
+
+                {project.highlights && project.highlights.length > 0 && (
+                  <dl className="mb-4 grid grid-cols-3 gap-2">
+                    {project.highlights.map((h) => (
+                      <div
+                        key={h.label}
+                        className="rounded-lg border border-white/10 bg-white/[0.03] px-2 py-2 text-center"
+                      >
+                        <dt className="sr-only">{h.label}</dt>
+                        <dd className="font-mono text-lg font-semibold text-cyan-200 [text-shadow:0_0_12px_rgba(34,211,238,0.45)]">
+                          {h.value}
+                        </dd>
+                        <dd className="mt-0.5 text-[11px] uppercase tracking-wider text-slate-500">
+                          {h.label}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
